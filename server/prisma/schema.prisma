@@ -13,18 +13,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum AccountType {
-  INDIVIDUAL
-  BUSINESS
-}
-
 model User {
   id                 String           @id @default(uuid())
   first_name         String
   last_name          String
   email              String           @unique
   password           String
-  account_type       AccountType      @default(INDIVIDUAL)
+  account_type       String
   created_at         DateTime         @default(now())
   individual_account Individual_User?
   business_account   Business_User?
@@ -43,7 +38,7 @@ model Business_User {
   user_id         String        @unique
   courses_created Course[]
   courses_sold    Course_Sold[]
-  bio             String
+  bio             String?
 }
 
 model Course_Content {
@@ -77,9 +72,9 @@ model Course {
   created_at              DateTime               @default(now())
   updated_at              DateTime               @updatedAt()
   category                String
-  topic                   String //different from title. This is like a sub-category
+  topic                   String
   language                String                 @default("English")
-  target                  String[] //who the course is for
+  target                  String[]
   duration                String
   actual_price            Int
   price_after_discount    Int?

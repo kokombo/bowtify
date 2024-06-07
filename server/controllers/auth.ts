@@ -12,21 +12,19 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const register = async (req: Request, res: Response) => {
-  const { firstName, lastName, emailAddress, dateOfBirth, accountType } =
-    req.body;
+  const { firstName, lastName, email, accountType } = req.body;
 
   try {
     await RegisterFormSchema.validate(req.body);
 
     const userExists = await prisma.user.findUnique({
       where: {
-        email_address: emailAddress,
+        email: email,
       },
     });
 
     if (userExists) {
       return res.status(StatusCodes.BAD_REQUEST).json({
-        loggedIn: false,
         message: "User already exists, please sign in.",
       });
     }
@@ -37,24 +35,36 @@ const register = async (req: Request, res: Response) => {
       data: {
         first_name: firstName,
         last_name: lastName,
-        email_address: emailAddress,
+        email: email,
         account_type: accountType,
-        date_of_birth: new Date(dateOfBirth),
         password,
       },
     });
+
+    if (accountType === "individual") {
+      await prisma.individual_User.create({
+        data: {
+          user_id: newUser.id,
+        },
+      });
+    } else {
+      await prisma.business_User.create({
+        data: {
+          user_id: newUser.id,
+        },
+      });
+    }
 
     jwtSign({ id: newUser.id }, process.env.JWT_SECRET_TOKEN!, {
       expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
     })
       .then((token) => {
         res.json({
-          loggedIn: true,
           token,
         });
       })
       .catch((error: Error) => {
-        res.json({ loggedIn: false, error });
+        res.json({ error });
       });
   } catch (error) {
     if (error instanceof ValidationError) {
@@ -64,7 +74,6 @@ const register = async (req: Request, res: Response) => {
     }
 
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      loggedIn: false,
       message: "Something went wrong, please try again.",
     });
   } finally {
@@ -73,21 +82,21 @@ const register = async (req: Request, res: Response) => {
 };
 
 const login = async (req: Request, res: Response) => {
-  const { emailAddress, password } = req.body;
+  const { email, password } = req.body;
 
   try {
     await LoginFormSchema.validate(req.body);
 
     const user = await prisma.user.findUnique({
       where: {
-        email_address: emailAddress,
+        email: email,
       },
     });
 
     if (!user) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ loggedIn: false, message: "Incorrect credentials" });
+        .json({ message: "Incorrect credentials" });
     }
 
     const passwordIsCorrect = await bcrypt.compare(password, user.password);
@@ -95,27 +104,26 @@ const login = async (req: Request, res: Response) => {
     if (!passwordIsCorrect) {
       return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({ loggedIn: false, message: "Incorrect password" });
+        .json({ message: "Incorrect password" });
     }
 
     jwtSign({ id: user.id }, process.env.JWT_SECRET_TOKEN!, {
       expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
     })
       .then((token) => {
-        res.json({ loggedIn: true, token });
+        res.json({ token, accountType: user.account_type });
       })
       .catch((error: Error) => {
-        res.json({ loggedIn: false, error });
+        res.json(error);
       });
   } catch (error) {
     if (error instanceof ValidationError) {
       return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({ loggedIn: false, message: error.errors[0] });
+        .json({ message: error.errors[0] });
     }
 
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      loggedIn: false,
       message: "Something went wrong, please try again.",
     });
   } finally {
