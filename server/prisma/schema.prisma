@@ -13,13 +13,84 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum AccountType {
+  INDIVIDUAL
+  BUSINESS
+}
+
 model User {
-  id String @id @default(uuid())
-  first_name String
-  last_name String
-  email_address String @unique
-  password String
-  date_of_birth DateTime
-  account_type String
-  created_at DateTime @default(now())
+  id                 String           @id @default(uuid())
+  first_name         String
+  last_name          String
+  email              String           @unique
+  password           String
+  account_type       AccountType      @default(INDIVIDUAL)
+  created_at         DateTime         @default(now())
+  individual_account Individual_User?
+  business_account   Business_User?
+}
+
+model Individual_User {
+  id                String   @id @default(uuid())
+  user              User     @relation(fields: [user_id], references: [id])
+  user_id           String   @unique
+  courses_purchased Course[]
+}
+
+model Business_User {
+  id              String        @id @default(uuid())
+  user            User          @relation(fields: [user_id], references: [id])
+  user_id         String        @unique
+  courses_created Course[]
+  courses_sold    Course_Sold[]
+  bio             String
+}
+
+model Course_Content {
+  id       String                @id @default(uuid())
+  title    String
+  overview String
+  duration String?
+  group    Course_Content_Group? @relation(fields: [group_id], references: [id])
+  group_id String?
+}
+
+model Course_Content_Group {
+  id        String           @id @default(uuid())
+  title     String
+  duration  String?
+  courses   Course_Content[]
+  course    Course?          @relation(fields: [course_id], references: [id])
+  course_id String?
+}
+
+model Course {
+  id                      String                 @id @default(uuid())
+  title                   String
+  author                  Business_User          @relation(fields: [author_id], references: [id])
+  author_id               String                 @unique
+  number_of_purchases     Int?                   @default(0)
+  outline                 String[]
+  certification_available Boolean
+  description             String
+  content                 Course_Content_Group[]
+  created_at              DateTime               @default(now())
+  updated_at              DateTime               @updatedAt()
+  category                String
+  topic                   String //different from title. This is like a sub-category
+  language                String                 @default("English")
+  target                  String[] //who the course is for
+  duration                String
+  actual_price            Int
+  price_after_discount    Int?
+  purchased_by            Individual_User[]
+  sales                   Course_Sold[]
+}
+
+model Course_Sold {
+  id        String         @id @default(uuid())
+  course    Course?        @relation(fields: [course_id], references: [id])
+  course_id String
+  business  Business_User? @relation(fields: [sold_by], references: [id])
+  sold_by   String?
 }
