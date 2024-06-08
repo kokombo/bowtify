@@ -6,5 +6,5 @@ type User = {
   password: string;
   account_type: string;
   subscribe_to_email: boolean;
-  created_at: DateTime;
+  created_at: Date;
 };

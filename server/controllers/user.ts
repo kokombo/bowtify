@@ -1,11 +1,18 @@
 import { Request, Response } from "express";
-import { prisma } from "../utilities/database";
+import { prisma } from "../utilities/prismaConnect";
 
-const getUser = async (req: Request, res: Response) => {
+const getUserProfile = async (req: Request, res: Response) => {
   try {
     const user = await prisma.user.findUnique({
       where: {
         id: req.user.id,
+      },
+      select: {
+        id: true,
+        first_name: true,
+        last_name: true,
+        email: true,
+        subscribe_to_email: true,
       },
     });
 
@@ -21,4 +28,4 @@ const getUser = async (req: Request, res: Response) => {
   }
 };
 
-export { getUser };
+export { getUserProfile };

@@ -7,7 +7,7 @@ import StatusCodes from "http-status-codes";
 import * as bcrypt from "bcrypt";
 import { jwtSign } from "../utilities/jwt";
 import { ValidationError } from "yup";
-import { prisma } from "../utilities/database";
+import { prisma } from "../utilities/prismaConnect";
 
 const register = async (req: Request, res: Response) => {
   const { firstName, lastName, email, accountType, subscribeToEmail } =

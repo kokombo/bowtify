@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { prisma } from "../utilities/database";
+import { prisma } from "../utilities/prismaConnect";
 
 export const authorizeUser = async (
   req: Request,
@@ -15,7 +15,7 @@ export const authorizeUser = async (
     try {
       const decodedToken = jwt.verify(
         token,
-        process.env.JWT_SECRET as string
+        process.env.JWT_SECRET_TOKEN as string
       ) as jwt.JwtPayload;
 
       const user = await prisma.user.findUnique({
