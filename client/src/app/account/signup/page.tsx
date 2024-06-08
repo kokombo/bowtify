@@ -5,7 +5,7 @@ import { SignupPage } from "@/containers";
 const IndividualAccountSignupPage = () => {
   return (
     <SignupPage
-      formLabel="Sign up to start learning"
+      formLabel="Sign up to access courses and events"
       accountType="individual"
     />
   );

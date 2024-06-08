@@ -12,4 +12,6 @@ type SigninFormType = {
   password: string;
 };
 
-type AuthErrorResponse = {};
+type AuthErrorResponse = {
+  message: string;
+};

@@ -62,7 +62,8 @@ const register = async (req: Request, res: Response) => {
     })
       .then((token) => {
         res.json({
-          token,
+          accessToken: token,
+          accountType: newUser.account_type,
         });
       })
       .catch((error: Error) => {
@@ -113,7 +114,7 @@ const login = async (req: Request, res: Response) => {
       expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
     })
       .then((token) => {
-        res.json({ token, accountType: user.account_type });
+        res.json({ accessToken: token, accountType: user.account_type });
       })
       .catch((error: Error) => {
         res.json(error);

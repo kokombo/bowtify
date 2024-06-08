@@ -2,19 +2,14 @@ import { useState } from "react";
 import TextField from "./TextField";
 import { BiHide, BiShow } from "react-icons/bi";
 
-type Props = {
-  name: string;
-  id: string;
-};
-
-const PasswordField = (props: Props) => {
+const PasswordField = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className=" flex items-center gap-2 relative w-fit">
       <TextField
-        name={props.name}
-        id={props.id}
+        name="password"
+        id="password"
         type={showPassword ? "text" : "password"}
         autoComplete="off"
         required={true}
