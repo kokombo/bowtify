@@ -1,27 +1,14 @@
 "use client";
 
-import { SignupForm } from "@/components/forms";
+import { SignupPage } from "@/containers";
 
-const initialFormValues: SignupFormType = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-};
-
-const Signup = () => {
+const IndividualAccountSignupPage = () => {
   return (
-    <main className="grid place-items-center py-12">
-      <SignupForm
-        initialFormValues={initialFormValues}
-        isError={false}
-        isPending={false}
-        formLabel="Sign up to Bowtify"
-        error={null}
-        onClickSignup={async () => {}}
-      />
-    </main>
+    <SignupPage
+      formLabel="Sign up to start learning"
+      accountType="individual"
+    />
   );
 };
 
-export default Signup;
+export default IndividualAccountSignupPage;

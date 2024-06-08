@@ -18,7 +18,7 @@ const CheckBox = (props: Props) => {
             radius="none"
             className="w-[400px] text-xs"
           >
-            <span className="text-sm font-medium">{props.label}</span>
+            <span className="text-sm  font-medium">{props.label}</span>
           </Checkbox>
         );
       }}

@@ -3,6 +3,10 @@ import { CheckBox, PasswordField, TextField } from "../fields";
 import { Form, Formik, FormikHelpers } from "formik";
 import { signupValidationSchema } from "@/utilities/validationSchemas";
 import { FormButton } from "../buttons";
+import { SUBSCRIBE_TO_EMAIL } from "@/constants/data";
+import SignupFormPolicy from "../SignupFormPolicy";
+import Divider from "../Divider";
+import SignupFormActionBox from "../SignupFormActionBox";
 
 type Props = {
   initialFormValues: SignupFormType;
@@ -23,6 +27,7 @@ const SignupForm = (props: Props) => {
         initialValues={props.initialFormValues}
         onSubmit={props.onClickSignup}
         validationSchema={signupValidationSchema}
+        validateOnBlur={false}
       >
         <Form className="flex flex-col gap-6">
           <h1 className="text-base font-bold self-center">{props.formLabel}</h1>
@@ -56,10 +61,20 @@ const SignupForm = (props: Props) => {
           <CheckBox
             name="subscribeToEmail"
             id="subscribeToEmail"
-            label="Send me special offers and personalized tips."
+            label={
+              props.initialFormValues.accountType === "individual"
+                ? SUBSCRIBE_TO_EMAIL.individual
+                : SUBSCRIBE_TO_EMAIL.business
+            }
           />
 
           <FormButton label="Signup" />
+
+          <SignupFormPolicy />
+
+          <Divider />
+
+          <SignupFormActionBox />
         </Form>
       </Formik>
     </div>

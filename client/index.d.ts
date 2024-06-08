@@ -3,6 +3,8 @@ type SignupFormType = {
   lastName: string;
   email: string;
   password: string;
+  subscribeToEmail: boolean;
+  accountType: string;
 };
 
 type SigninFormType = {
