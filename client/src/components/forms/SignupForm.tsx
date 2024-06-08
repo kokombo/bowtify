@@ -28,6 +28,7 @@ const SignupForm = (props: Props) => {
       onSubmit={props.onClickSignup}
       validationSchema={signupValidationSchema}
       validateOnBlur={false}
+      validateOnChange={false}
     >
       <Form className="flex flex-col gap-6">
         <h1 className="text-base font-bold self-center">{props.formLabel}</h1>
@@ -68,7 +69,10 @@ const SignupForm = (props: Props) => {
           }
         />
 
-        <FormButton label={props.isPending ? "Signing Up..." : "Sign Up"} />
+        <FormButton
+          label={props.isPending ? "Signing Up..." : "Sign Up"}
+          disabled={props.isPending}
+        />
 
         {props.isError && (
           <CustomError message={props.error?.response?.data.message} />

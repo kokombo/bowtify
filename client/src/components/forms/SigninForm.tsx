@@ -42,7 +42,10 @@ const SigninForm = (props: Props) => {
           <CustomError message={props.error} class="self-center" />
         )}
 
-        <FormButton label={props.isLoading ? "Signing In..." : "Sign In"} />
+        <FormButton
+          label={props.isLoading ? "Signing In..." : "Sign In"}
+          disabled={props.isLoading}
+        />
 
         <SigninFormActionBox />
       </Form>

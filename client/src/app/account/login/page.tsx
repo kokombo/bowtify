@@ -25,6 +25,7 @@ const Login = () => {
 
       const res = await signIn("credentials", {
         ...values,
+        callbackUrl: "/",
         redirect: false,
       });
 
