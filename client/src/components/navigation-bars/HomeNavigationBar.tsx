@@ -4,8 +4,15 @@ import { MainSearchBox } from "../search-boxes";
 import { BorderedLink, ColorLink } from "../buttons";
 import { FaShoppingCart } from "react-icons/fa";
 import { NAV_LINKS } from "@/constants/data";
+import { useCurrentUser } from "@/hooks";
+import { Fragment } from "react";
+import { LuHeart } from "react-icons/lu";
+import { CgBell } from "react-icons/cg";
+import MyIcon from "../MyIcon";
 
 const HomeNavigationBar = () => {
+  const { session, loading, individualAccount } = useCurrentUser();
+
   return (
     <nav className="flex items-center justify-between py-4 px-[5%] shadow-xl">
       <span className="flex items-center gap-6">
@@ -26,15 +33,39 @@ const HomeNavigationBar = () => {
         ))}
       </ul>
 
-      <div className="flex items-center gap-4">
-        <Link href="">
-          <FaShoppingCart />
-        </Link>
+      <Fragment>
+        {loading ? (
+          <div />
+        ) : (
+          <div className="flex items-center gap-4">
+            <Fragment>
+              {!session || individualAccount ? (
+                <Link href="">
+                  <MyIcon icon={FaShoppingCart} />
+                </Link>
+              ) : null}
+            </Fragment>
 
-        <BorderedLink href="/account/login" label="Sign In" />
+            {session ? (
+              <Fragment>
+                <Link href="">
+                  <MyIcon icon={LuHeart} />
+                </Link>
 
-        <ColorLink href="/account/signup" label="Sign Up" />
-      </div>
+                <Link href="">
+                  <MyIcon icon={CgBell} />
+                </Link>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <BorderedLink href="/account/login" label="Sign In" />
+
+                <ColorLink href="/account/signup" label="Sign Up" />
+              </Fragment>
+            )}
+          </div>
+        )}
+      </Fragment>
     </nav>
   );
 };

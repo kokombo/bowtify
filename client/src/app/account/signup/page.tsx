@@ -1,6 +1,6 @@
 "use client";
 
-import { SignupPage } from "@/containers";
+import { SignupPage } from "@/views";
 
 const IndividualAccountSignupPage = () => {
   return (

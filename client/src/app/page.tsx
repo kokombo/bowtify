@@ -1,15 +1,30 @@
 "use client";
-import { useSession, signOut } from "next-auth/react";
+
+import { useCurrentUser } from "@/hooks";
+import {
+  BusinessAuthenticatedHome,
+  IndividualAuthenticatedHome,
+  UnauthenticatedHome,
+} from "@/views";
+import { Fragment } from "react";
 
 const Home = () => {
-  const { data: session } = useSession();
-
-  console.log(session?.user);
+  const { individualAccount, session } = useCurrentUser();
 
   return (
-    <main>
-      <button onClick={() => signOut()}>Signout</button>
-    </main>
+    <Fragment>
+      {!session ? (
+        <UnauthenticatedHome />
+      ) : (
+        <Fragment>
+          {individualAccount ? (
+            <IndividualAuthenticatedHome />
+          ) : (
+            <BusinessAuthenticatedHome />
+          )}
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
