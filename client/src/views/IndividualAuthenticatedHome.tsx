@@ -1,5 +1,5 @@
 const IndividualAuthenticatedHome = () => {
-  return <main></main>;
+  return <main>IndividualAuthenticatedHome</main>;
 };
 
 export default IndividualAuthenticatedHome;

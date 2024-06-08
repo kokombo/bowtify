@@ -4,8 +4,8 @@ export const useCurrentUser = () => {
   const { data: session, status } = useSession();
 
   const accessToken = session?.user.accessToken;
-  const individualAccount = session?.user.accessToken === "individual";
-  const businessAccount = session?.user.accessToken === "business";
+  const individualAccount = session?.user.accountType === "individual";
+  const businessAccount = session?.user.accountType === "business";
   const loading = status === "loading";
 
   return { accessToken, individualAccount, businessAccount, session, loading };

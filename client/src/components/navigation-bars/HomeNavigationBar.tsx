@@ -9,6 +9,7 @@ import { Fragment } from "react";
 import { LuHeart } from "react-icons/lu";
 import { CgBell } from "react-icons/cg";
 import MyIcon from "../MyIcon";
+import { ProfileIcon } from "../icons";
 
 const HomeNavigationBar = () => {
   const { session, loading, individualAccount } = useCurrentUser();
@@ -37,7 +38,7 @@ const HomeNavigationBar = () => {
         {loading ? (
           <div />
         ) : (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Fragment>
               {!session || individualAccount ? (
                 <Link href="">
@@ -55,6 +56,8 @@ const HomeNavigationBar = () => {
                 <Link href="">
                   <MyIcon icon={CgBell} />
                 </Link>
+
+                <ProfileIcon />
               </Fragment>
             ) : (
               <Fragment>

@@ -9,7 +9,7 @@ import {
 import { Fragment } from "react";
 
 const Home = () => {
-  const { individualAccount, session } = useCurrentUser();
+  const { individualAccount, session, businessAccount } = useCurrentUser();
 
   return (
     <Fragment>
@@ -17,11 +17,9 @@ const Home = () => {
         <UnauthenticatedHome />
       ) : (
         <Fragment>
-          {individualAccount ? (
-            <IndividualAuthenticatedHome />
-          ) : (
-            <BusinessAuthenticatedHome />
-          )}
+          {individualAccount && <IndividualAuthenticatedHome />}
+
+          {businessAccount && <BusinessAuthenticatedHome />}
         </Fragment>
       )}
     </Fragment>

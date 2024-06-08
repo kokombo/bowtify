@@ -5,7 +5,7 @@ type Props = {
 };
 
 const MyIcon = (props: Props) => {
-  return <props.icon className="h-5 w-5" />;
+  return <props.icon className="h-[22px] w-[22px]" />;
 };
 
 export default MyIcon;
