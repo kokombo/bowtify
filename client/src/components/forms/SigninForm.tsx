@@ -38,9 +38,11 @@ const SigninForm = (props: Props) => {
 
         <PasswordField />
 
-        <FormButton label={props.isLoading ? "Signing In..." : "Sign In"} />
+        {props.error && (
+          <CustomError message={props.error} class="self-center" />
+        )}
 
-        {props.error && <CustomError message={props.error} />}
+        <FormButton label={props.isLoading ? "Signing In..." : "Sign In"} />
 
         <SigninFormActionBox />
       </Form>

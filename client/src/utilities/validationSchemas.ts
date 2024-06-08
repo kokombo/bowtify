@@ -12,7 +12,7 @@ const signupValidationSchema = Yup.object({
 });
 
 const signinValidationSchema = Yup.object({
-  emailAddress: Yup.string()
+  email: Yup.string()
     .required("The email field is required.")
     .email("Enter a valid email address."),
   password: Yup.string().required("The password field is required."),

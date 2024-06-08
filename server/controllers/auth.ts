@@ -99,7 +99,7 @@ const login = async (req: Request, res: Response) => {
     if (!user) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ message: "Incorrect credentials" });
+        .json({ message: "Invalid credentials. Please check and try again." });
     }
 
     const passwordIsCorrect = await bcrypt.compare(password, user.password);
@@ -107,7 +107,7 @@ const login = async (req: Request, res: Response) => {
     if (!passwordIsCorrect) {
       return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({ message: "Incorrect password" });
+        .json({ message: "Incorrect password. Please check and try again." });
     }
 
     jwtSign({ id: user.id }, process.env.JWT_SECRET_TOKEN!, {

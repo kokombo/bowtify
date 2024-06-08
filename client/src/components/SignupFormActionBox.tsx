@@ -5,7 +5,7 @@ const SignupFormActionBox = () => {
     <h6 className="self-center text-sm">
       Already have an account?{" "}
       <Link
-        href="/account/signin"
+        href="/account/login"
         className="underline text-purple font-semibold"
       >
         Sign in

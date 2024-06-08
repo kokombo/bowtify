@@ -20,28 +20,26 @@ const Login = () => {
     values: SigninFormType,
     onsubmitProps: FormikHelpers<SigninFormType>
   ) => {
-    console.log(values, "aaaa");
+    try {
+      setLoading(true);
 
-    // try {
-    //   setLoading(true);
+      const res = await signIn("credentials", {
+        ...values,
+        redirect: false,
+      });
 
-    //   const res = await signIn("credentials", {
-    //     ...values,
-    //     redirect: false,
-    //   });
+      if (res?.ok) {
+        onsubmitProps.resetForm();
+      }
 
-    //   if (res?.ok) {
-    //     onsubmitProps.resetForm();
-    //   }
-
-    //   if (res?.error) {
-    //     setError(res.error || authError);
-    //   }
-    // } catch (error: any) {
-    //   return setError(error.message || authError);
-    // } finally {
-    //   setLoading(false);
-    // }
+      if (res?.error) {
+        setError(res.error || authError);
+      }
+    } catch (error: any) {
+      return setError(error.message || authError);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useClearErrorMessage(setError);

@@ -15,3 +15,8 @@ type SigninFormType = {
 type AuthErrorResponse = {
   message: string;
 };
+
+type AuthDataResponse = {
+  accessToken: string;
+  accountType: string;
+};
