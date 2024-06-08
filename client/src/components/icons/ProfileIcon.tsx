@@ -3,8 +3,6 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-  Button,
-  DropdownSection,
 } from "@nextui-org/react";
 import Link from "next/link";
 
@@ -18,31 +16,31 @@ const ProfileIcon = () => {
       </DropdownTrigger>
 
       <DropdownMenu variant="flat" aria-label="Static Actions">
-        <DropdownItem key="learning">
+        <DropdownItem key="learning" className="mb-1">
           <Link href="#">My learning</Link>
         </DropdownItem>
 
-        <DropdownItem key="cart">
+        <DropdownItem key="cart" className="mb-1">
           <Link href="#">My cart</Link>
         </DropdownItem>
 
-        <DropdownItem key="wishlist">
+        <DropdownItem key="wishlist" className="mb-1">
           <Link href="#">Wishlist</Link>
         </DropdownItem>
 
-        <DropdownItem key="bowtifyBusiness">
+        <DropdownItem key="bowtifyBusiness" className="mb-1">
           <Link href="#">Bowtify business</Link>
         </DropdownItem>
 
-        <DropdownItem key="notifications">
+        <DropdownItem key="notifications" className="mb-1">
           <Link href="#">Notifications</Link>
         </DropdownItem>
 
-        <DropdownItem key="settings">
+        <DropdownItem key="settings" className="mb-1">
           <Link href="#">Account Settings</Link>
         </DropdownItem>
 
-        <DropdownItem key="transaction">
+        <DropdownItem key="transaction" className="mb-1">
           <Link href="#">Transaction history</Link>
         </DropdownItem>
       </DropdownMenu>
