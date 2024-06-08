@@ -4,33 +4,37 @@ type Props = {
   name: string;
   id: string;
   type: "email" | "password" | "text" | "number";
-  placeholder?: string;
   disabled?: boolean;
   autoComplete?: "on" | "off";
   maxLength?: number;
-  extraClasses?: string;
-  labelVisible?: boolean;
+  required: boolean;
+  label?: string;
 };
 
 const TextField = (props: Props) => {
   return (
-    <div className={props.extraClasses}>
+    <div>
       <Field name={props.name} id={props.id}>
         {({ field }: FieldProps) => {
           return (
-            <span>
-              <label htmlFor={props.name}>{props.placeholder}</label>
+            <div className="relative border-black border-1">
+              <label
+                htmlFor={props.name}
+                className="text-xs font-bold absolute left-3 top-1"
+              >
+                {props.label}
+              </label>
 
               <input
                 {...field}
-                className=" border-chalk border-[1px] rounded-lg w-full px-4 py-3 text-sm lg:text-base"
+                className="w-[400px] px-3 pt-6 pb-2 text-sm lg:text-base outline-none"
                 type={props.type}
-                placeholder={props.placeholder}
                 autoComplete={props.autoComplete}
                 disabled={props.disabled}
                 maxLength={props.maxLength}
+                required={props.required}
               />
-            </span>
+            </div>
           );
         }}
       </Field>
@@ -39,7 +43,7 @@ const TextField = (props: Props) => {
         name={props.name}
         component="div"
         id={props.id}
-        className="text-red-700 text-xs font-semibold md:text-sm"
+        className="text-red-700 font-medium text-xs absolute"
       />
     </div>
   );

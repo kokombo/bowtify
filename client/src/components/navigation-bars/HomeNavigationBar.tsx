@@ -11,7 +11,7 @@ const HomeNavigationBar = () => {
       <span className="flex items-center gap-6">
         <BowtifyLogo />
 
-        <Link href="#" className="text-sm">
+        <Link href="#" className="text-sm hover:text-purple">
           Explore
         </Link>
       </span>
@@ -20,7 +20,7 @@ const HomeNavigationBar = () => {
 
       <ul className="flex items-center gap-6">
         {NAV_LINKS.map((item, index) => (
-          <li key={index} className="text-sm hover:underline">
+          <li key={index} className="text-sm hover:underline ">
             <Link href={item.href}>{item.label} </Link>
           </li>
         ))}

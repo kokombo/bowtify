@@ -12,7 +12,8 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const register = async (req: Request, res: Response) => {
-  const { firstName, lastName, email, accountType } = req.body;
+  const { firstName, lastName, email, accountType, subscribeToEmail } =
+    req.body;
 
   try {
     await RegisterFormSchema.validate(req.body);
@@ -37,6 +38,7 @@ const register = async (req: Request, res: Response) => {
         last_name: lastName,
         email: email,
         account_type: accountType,
+        subscribe_to_email: subscribeToEmail,
         password,
       },
     });

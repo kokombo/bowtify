@@ -20,6 +20,7 @@ const config: Config = {
         fadedGray: "#575D60",
         white: "#FEFEFE",
         fadedWhite: "#F8F8F8",
+        purple: "#390B6F",
       },
     },
   },
