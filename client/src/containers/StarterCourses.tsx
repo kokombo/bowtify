@@ -20,7 +20,7 @@ const StarterCourses = () => {
         </Link>
       </div>
 
-      <div className="flex gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {[...Array(3)].map((_, index) => (
           <StarterCourseCard key={index} />
         ))}

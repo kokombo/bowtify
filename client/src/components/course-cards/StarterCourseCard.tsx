@@ -3,12 +3,13 @@ import Link from "next/link";
 const StarterCourseCard = () => {
   return (
     <Link href="">
-      <article className="h-[160px] border-1 border-black flex w-[400px]">
+      <article className="h-[160px] border-1 border-gray flex w-full">
         <iframe
           width="150"
           height="100%"
           src="https://www.youtube.com/embed/bio_H1-6pDo"
           allow="picture-in-picture"
+          className="bg-gray"
         ></iframe>
 
         <article className="px-3 py-2 flex flex-col justify-between">

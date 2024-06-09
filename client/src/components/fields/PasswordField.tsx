@@ -21,7 +21,11 @@ const PasswordField = () => {
           type="button"
           onClick={() => setShowPassword((showPassword) => !showPassword)}
         >
-          {showPassword ? <BiHide /> : <BiShow />}
+          {showPassword ? (
+            <BiHide className="h-5 w-5" />
+          ) : (
+            <BiShow className="h-5 w-5" />
+          )}
         </button>
       </span>
     </div>

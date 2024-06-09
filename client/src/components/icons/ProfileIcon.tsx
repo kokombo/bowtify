@@ -6,6 +6,8 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
+import { INDIVIDUAL_ACCOUNT_AUTHENTICATED_LINKS } from "@/constants/data";
 
 const ProfileIcon = () => {
   const { user } = useCurrentUser();
@@ -46,6 +48,12 @@ const ProfileIcon = () => {
 
         <DropdownItem key="transaction" className="mb-1">
           <Link href="#">Transaction history</Link>
+        </DropdownItem>
+
+        <DropdownItem key="transaction" className="mb-1">
+          <button type="button" onClick={() => signOut()}>
+            Sign out
+          </button>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

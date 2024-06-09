@@ -6,7 +6,7 @@ const ProfileBanner = () => {
 
   return (
     <div className="paddingX py-10">
-      <article className="flex items-center gap-3">
+      <article className="flex items-center gap-4">
         <ProfileImage
           paddingX="px-6"
           paddingY="py-5"
