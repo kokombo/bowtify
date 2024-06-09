@@ -1,5 +1,11 @@
+import { ProfileBanner } from "@/components/user";
+
 const IndividualAuthenticatedHome = () => {
-  return <main>IndividualAuthenticatedHome</main>;
+  return (
+    <main>
+      <ProfileBanner />
+    </main>
+  );
 };
 
 export default IndividualAuthenticatedHome;

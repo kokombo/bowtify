@@ -1,3 +1,4 @@
+import { useCurrentUser } from "@/hooks";
 import {
   Dropdown,
   DropdownTrigger,
@@ -7,11 +8,14 @@ import {
 import Link from "next/link";
 
 const ProfileIcon = () => {
+  const { user } = useCurrentUser();
+
   return (
     <Dropdown backdrop="transparent">
       <DropdownTrigger>
         <div className="bg-black text-white font-semibold py-2 px-3 rounded-full cursor-pointer">
-          SI
+          {user?.first_name.slice(0, 1)}
+          {user?.last_name.slice(0, 1)}
         </div>
       </DropdownTrigger>
 

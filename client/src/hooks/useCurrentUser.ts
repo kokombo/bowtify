@@ -1,12 +1,22 @@
+import { StateType } from "@/redux-toolkit/store";
 import { useSession } from "next-auth/react";
+import { useSelector } from "react-redux";
 
 export const useCurrentUser = () => {
   const { data: session, status } = useSession();
+  const { user } = useSelector((store: StateType) => store.user);
 
   const accessToken = session?.user.accessToken;
-  const individualAccount = session?.user.accountType === "individual";
-  const businessAccount = session?.user.accountType === "business";
-  const loading = status === "loading";
+  const isIndividualAccount = session?.user.accountType === "individual";
+  const isBusinessAccount = session?.user.accountType === "business";
+  const sessionLoading = status === "loading";
 
-  return { accessToken, individualAccount, businessAccount, session, loading };
+  return {
+    accessToken,
+    isIndividualAccount,
+    isBusinessAccount,
+    session,
+    sessionLoading,
+    user,
+  };
 };

@@ -5,7 +5,7 @@ import "./globals.css";
 import { AllProviders } from "@/providers";
 import { HomeNavigationBar } from "@/components/navigation-bars";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["greek"] });
 
 export default function RootLayout({
   children,

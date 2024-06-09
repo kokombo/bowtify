@@ -12,10 +12,10 @@ import MyIcon from "../MyIcon";
 import { ProfileIcon } from "../icons";
 
 const HomeNavigationBar = () => {
-  const { session, loading, individualAccount } = useCurrentUser();
+  const { session, sessionLoading, isIndividualAccount } = useCurrentUser();
 
   return (
-    <nav className="flex items-center justify-between py-4 px-[5%] shadow-xl">
+    <nav className="flex items-center justify-between py-4 paddingX shadow-xl">
       <span className="flex items-center gap-6">
         <BowtifyLogo />
 
@@ -35,12 +35,12 @@ const HomeNavigationBar = () => {
       </ul>
 
       <Fragment>
-        {loading ? (
+        {sessionLoading ? (
           <div />
         ) : (
           <div className="flex items-center gap-6">
             <Fragment>
-              {!session || individualAccount ? (
+              {!session || isIndividualAccount ? (
                 <Link href="">
                   <MyIcon icon={FaShoppingCart} />
                 </Link>

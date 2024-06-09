@@ -2,6 +2,8 @@
 
 import { apiBaseUrl } from "@/constants/data";
 import { useCurrentUser } from "@/hooks";
+import { setUserProfile } from "@/redux-toolkit/slices/user";
+import { DispatchType } from "@/redux-toolkit/store";
 import {
   BusinessAuthenticatedHome,
   IndividualAuthenticatedHome,
@@ -9,11 +11,14 @@ import {
 } from "@/views";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
-  const { individualAccount, session, businessAccount, accessToken } =
+  const { isIndividualAccount, session, isBusinessAccount, accessToken } =
     useCurrentUser();
+
+  const dispatch: DispatchType = useDispatch();
 
   const getUserProfileRequest = async () => {
     const res = await axios.get(apiBaseUrl + "/user/getUserProfile", {
@@ -26,11 +31,15 @@ const Home = () => {
     return res.data;
   };
 
-  const { data, error } = useQuery<User, ErrorResponse>({
+  const { data } = useQuery<User, ErrorResponse>({
     queryKey: ["getUserProfile"],
     queryFn: getUserProfileRequest,
     enabled: !!session,
   });
+
+  useEffect(() => {
+    dispatch(setUserProfile(data));
+  }, [data, dispatch]);
 
   return (
     <Fragment>
@@ -38,9 +47,9 @@ const Home = () => {
         <UnauthenticatedHome />
       ) : (
         <Fragment>
-          {individualAccount && <IndividualAuthenticatedHome />}
+          {isIndividualAccount && <IndividualAuthenticatedHome />}
 
-          {businessAccount && <BusinessAuthenticatedHome />}
+          {isBusinessAccount && <BusinessAuthenticatedHome />}
         </Fragment>
       )}
     </Fragment>
