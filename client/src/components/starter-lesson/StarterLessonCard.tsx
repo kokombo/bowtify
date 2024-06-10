@@ -3,6 +3,7 @@ import CourseTitle from "./CourseTitle";
 import LessonTitle from "./LessonTitle";
 import StarterLessonImage from "./StarterLessonImage";
 import Duration from "../Duration";
+
 type Props = {
   lesson: Lesson;
 };
@@ -21,7 +22,7 @@ const StarterLessonCard = (props: Props) => {
           </span>
 
           <span className="text-xs flex gap-2">
-            <h5 className="font-medium">Course</h5>
+            <h5 className="font-medium">Lesson</h5>
             <Duration duration={props.lesson.duration} showDot />
           </span>
         </article>

@@ -66,7 +66,7 @@ export const starterLessons = [
     id: "1",
     title: "JavaScript Console",
     video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
-    duration: 0.4,
+    duration: 3600,
     courseTitle: "HTML5 and CSS3 Fundamentals",
   },
 
@@ -74,7 +74,7 @@ export const starterLessons = [
     id: "2",
     title: "JavaScript Console",
     video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
-    duration: 10,
+    duration: 1800,
     courseTitle: "JavaScript Essentials",
   },
 
@@ -82,7 +82,7 @@ export const starterLessons = [
     id: "3",
     title: "JavaScript Console JavaScript Console",
     video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
-    duration: 0.4,
+    duration: 1500,
     courseTitle: "JavaScript DOM Dynamic Web Interaction",
   },
 ];

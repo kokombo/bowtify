@@ -11,6 +11,10 @@ const IndividualAuthenticatedHome = () => {
         label="Because you searched for Front-end Development"
         data={suggestedCourses}
       />
+      <SuggestedCourses
+        label='Because you viewed "Data Science"'
+        data={suggestedCourses}
+      />
     </main>
   );
 };
