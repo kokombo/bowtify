@@ -32,3 +32,14 @@ type User = {
 type ErrorResponse = {
   message: string;
 };
+
+type Course = {
+  thumbNail: string;
+  title: string;
+  id: string;
+  rating: number;
+  authors: string[];
+  reviewsLength: number;
+  price: number;
+  isBestSeller: boolean;
+};

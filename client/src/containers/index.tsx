@@ -1,3 +1,4 @@
 import StarterCourses from "./StarterCourses";
+import SuggestedCourses from "./SuggestedCourses";
 
-export { StarterCourses };
+export { StarterCourses, SuggestedCourses };
