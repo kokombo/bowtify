@@ -14,8 +14,7 @@ const SuggestedEventImage = (props: Props) => {
         fill
         quality={100}
         loading="lazy"
-        objectFit="cover"
-        objectPosition="center"
+        sizes="any"
       />
     </div>
   );

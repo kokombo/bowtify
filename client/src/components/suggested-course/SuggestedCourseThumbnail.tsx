@@ -14,6 +14,7 @@ const SuggestedCourseThumbnail = (props: Props) => {
         quality={100}
         loading="lazy"
         fill
+        sizes="any"
       />
     </div>
   );
