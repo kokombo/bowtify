@@ -7,7 +7,7 @@ type Props = {
 
 const SuggestedCourses = (props: Props) => {
   return (
-    <section className="paddingX py-10">
+    <section className="paddingX my-16">
       <h2 className="mb-5 text-2xl font-bold">{props.label}</h2>
 
       <div className="grid grid-cols-5 gap-3">

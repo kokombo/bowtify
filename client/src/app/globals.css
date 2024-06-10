@@ -8,6 +8,10 @@
   }
 }
 
+html {
+  scrollbar-width: "thin";
+}
+
 .paddingX {
   @apply px-[3%];
 }

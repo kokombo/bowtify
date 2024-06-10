@@ -8,7 +8,7 @@ type Props = {
 
 const SuggestedEvents = (props: Props) => {
   return (
-    <section className="paddingX py-10">
+    <section className="paddingX my-16">
       <div className="flex items-center justify-between mb-5">
         <h4 className="text-2xl font-bold">{props.label}</h4>
 

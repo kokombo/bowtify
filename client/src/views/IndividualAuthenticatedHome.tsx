@@ -1,5 +1,6 @@
 import { ProfileBanner } from "@/components/user";
 import {
+  BillBoard,
   StarterLessons,
   SuggestedCourses,
   SuggestedEvents,
@@ -10,6 +11,8 @@ const IndividualAuthenticatedHome = () => {
   return (
     <main>
       <ProfileBanner />
+
+      <BillBoard />
 
       <StarterLessons />
 

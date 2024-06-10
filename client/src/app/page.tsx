@@ -15,8 +15,13 @@ import { Fragment, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 const Home = () => {
-  const { isIndividualAccount, session, isBusinessAccount, accessToken } =
-    useCurrentUser();
+  const {
+    isIndividualAccount,
+    sessionLoading,
+    session,
+    isBusinessAccount,
+    accessToken,
+  } = useCurrentUser();
 
   const dispatch: DispatchType = useDispatch();
 
@@ -43,7 +48,9 @@ const Home = () => {
 
   return (
     <Fragment>
-      {!session ? (
+      {sessionLoading ? (
+        <div className="h-screen" />
+      ) : !session ? (
         <UnauthenticatedHome />
       ) : (
         <Fragment>

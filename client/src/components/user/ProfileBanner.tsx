@@ -5,7 +5,7 @@ const ProfileBanner = () => {
   const { user } = useCurrentUser();
 
   return (
-    <div className="paddingX py-10">
+    <div className="paddingX my-12">
       <article className="flex items-center gap-4">
         <ProfileImage
           paddingX="px-6"

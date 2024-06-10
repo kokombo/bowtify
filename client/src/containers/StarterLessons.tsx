@@ -7,7 +7,7 @@ const StarterLessons = () => {
   const { user } = useCurrentUser();
 
   return (
-    <section className="paddingX py-10">
+    <section className="paddingX my-16">
       <div className="flex items-center justify-between mb-8">
         <h4 className="text-3xl font-bold">
           Let{"'"}s start learning, {user?.first_name}
