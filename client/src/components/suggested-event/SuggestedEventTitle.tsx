@@ -6,7 +6,7 @@ type Props = {
 
 const SuggestedEventTitle = (props: Props) => {
   return (
-    <h5 className="text-base font-bold text-wrap leading-tight capitalize">
+    <h5 className="text-base font-bold text-wrap capitalize">
       {sliceString(props.title, 25)}
     </h5>
   );

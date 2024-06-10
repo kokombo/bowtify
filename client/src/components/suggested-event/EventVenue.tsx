@@ -1,5 +1,5 @@
 import { sliceString } from "@/utilities";
-import { IoLocation } from "react-icons/io5";
+import { IoLocationOutline } from "react-icons/io5";
 
 type Props = {
   location: string;
@@ -8,7 +8,7 @@ type Props = {
 const EventVenue = (props: Props) => {
   return (
     <span className="flex items-center gap-[2px] capitalize">
-      <IoLocation className="h-4 w-4" scale={1} />
+      <IoLocationOutline className="h-4 w-4" scale={1} />
       <span>{sliceString(props.location, 30)}</span>
     </span>
   );
