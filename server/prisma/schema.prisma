@@ -42,45 +42,47 @@ model Business_User {
   bio             String?
 }
 
-model Course_Content {
-  id       String                @id @default(uuid())
-  title    String
-  overview String
-  duration String?
-  group    Course_Content_Group? @relation(fields: [group_id], references: [id])
-  group_id String?
+model Lesson {
+  id        String        @id @default(uuid())
+  title     String
+  overview  String
+  video_url String
+  duration  Int
+  group     Lesson_Group? @relation(fields: [group_id], references: [id])
+  group_id  String?
 }
 
-model Course_Content_Group {
-  id        String           @id @default(uuid())
+model Lesson_Group {
+  id        String   @id @default(uuid())
   title     String
   duration  String?
-  courses   Course_Content[]
-  course    Course?          @relation(fields: [course_id], references: [id])
+  lessons   Lesson[]
+  course    Course?  @relation(fields: [course_id], references: [id])
   course_id String?
 }
 
 model Course {
-  id                      String                 @id @default(uuid())
+  id                      String            @id @default(uuid())
   title                   String
-  author                  Business_User          @relation(fields: [author_id], references: [id])
-  author_id               String                 @unique
-  number_of_purchases     Int?                   @default(0)
+  author                  Business_User     @relation(fields: [author_id], references: [id])
+  author_id               String            @unique
+  number_of_purchases     Int?              @default(0)
   outline                 String[]
   certification_available Boolean
   description             String
-  content                 Course_Content_Group[]
-  created_at              DateTime               @default(now())
-  updated_at              DateTime               @updatedAt()
+  content                 Lesson_Group[]
+  created_at              DateTime          @default(now())
+  updated_at              DateTime          @updatedAt()
   category                String
   topic                   String
-  language                String                 @default("English")
-  target                  String[]
+  language                String            @default("English")
+  targets                 String[]
   duration                String
   actual_price            Int
   price_after_discount    Int?
   purchased_by            Individual_User[]
   sales                   Course_Sold[]
+  isBestSeller            String?
 }
 
 model Course_Sold {

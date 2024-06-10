@@ -43,3 +43,11 @@ type Course = {
   price: number;
   isBestSeller: boolean;
 };
+
+type Lesson = {
+  id: string;
+  title: string;
+  video_url: string;
+  duration: number;
+  courseTitle: string; //to be removed
+};

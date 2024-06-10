@@ -1,8 +1,9 @@
-import { StarterCourseCard } from "@/components/course-cards";
+import { StarterLessonCard } from "@/components/starter-lesson";
 import { useCurrentUser } from "@/hooks";
 import Link from "next/link";
+import { starterLessons } from "../../dummy";
 
-const StarterCourses = () => {
+const StarterLessons = () => {
   const { user } = useCurrentUser();
 
   return (
@@ -21,12 +22,12 @@ const StarterCourses = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4">
-        {[...Array(3)].map((_, index) => (
-          <StarterCourseCard key={index} />
+        {starterLessons.map((lesson) => (
+          <StarterLessonCard key={lesson.id} lesson={lesson} />
         ))}
       </div>
     </section>
   );
 };
 
-export default StarterCourses;
+export default StarterLessons;

@@ -60,3 +60,29 @@ export const suggestedCourses = [
     isBestSeller: false,
   },
 ];
+
+export const starterLessons = [
+  {
+    id: "1",
+    title: "JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 0.4,
+    courseTitle: "HTML5 and CSS3 Fundamentals",
+  },
+
+  {
+    id: "2",
+    title: "JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 10,
+    courseTitle: "JavaScript Essentials",
+  },
+
+  {
+    id: "3",
+    title: "JavaScript Console JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 0.4,
+    courseTitle: "JavaScript DOM Dynamic Web Interaction",
+  },
+];

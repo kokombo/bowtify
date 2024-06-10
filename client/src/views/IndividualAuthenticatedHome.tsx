@@ -1,12 +1,12 @@
 import { ProfileBanner } from "@/components/user";
-import { StarterCourses, SuggestedCourses } from "@/containers";
+import { StarterLessons, SuggestedCourses } from "@/containers";
 import { suggestedCourses } from "../../dummy";
 
 const IndividualAuthenticatedHome = () => {
   return (
     <main>
       <ProfileBanner />
-      <StarterCourses />
+      <StarterLessons />
       <SuggestedCourses
         label="Because you searched for Front-end Development"
         data={suggestedCourses}
