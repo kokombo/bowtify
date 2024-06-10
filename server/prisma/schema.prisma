@@ -77,12 +77,13 @@ model Course {
   topic                   String
   language                String            @default("English")
   targets                 String[]
-  duration                String
+  duration                Int
   actual_price            Int
   price_after_discount    Int?
   purchased_by            Individual_User[]
   sales                   Course_Sold[]
-  isBestSeller            String?
+  isBestSeller            Boolean           @default(false)
+  isNewCourse             Boolean           @default(true)
 }
 
 model Course_Sold {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BestSellerTag } from "../tags";
+import { BestSellerTag, NewCourseTag } from "../tags";
 import SuggestedCourseThumbnail from "./SuggestedCourseThumbnail";
 import SuggestedCourseTitle from "./SuggestedCourseTitle";
 import SuggestedCourseAuthors from "./SuggestedCourseAuthors";
@@ -31,7 +31,11 @@ const SuggestedCourseCard = (props: Props) => {
 
           <SuggestedCoursePrice price={props.course.price} />
 
-          {props.course.isBestSeller && <BestSellerTag />}
+          <span className="flex gap-1">
+            {props.course.isBestSeller && <BestSellerTag />}
+
+            {props.course.isNewCourse && <NewCourseTag />}
+          </span>
         </article>
       </article>
     </Link>

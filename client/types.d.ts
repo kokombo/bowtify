@@ -42,6 +42,7 @@ type Course = {
   reviewsLength: number;
   price: number;
   isBestSeller: boolean;
+  isNewCourse: boolean;
 };
 
 type Lesson = {

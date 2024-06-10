@@ -1,9 +1,7 @@
+import TagCard from "./TagCard";
+
 const BestSellerTag = () => {
-  return (
-    <span className=" w-fit py-1 px-3 bg-purple text-xs text-white font-light">
-      Bestseller
-    </span>
-  );
+  return <TagCard label="Bestseller" classes="bg-purple" />;
 };
 
 export default BestSellerTag;
