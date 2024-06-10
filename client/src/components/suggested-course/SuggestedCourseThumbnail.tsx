@@ -15,6 +15,7 @@ const SuggestedCourseThumbnail = (props: Props) => {
         loading="lazy"
         fill
         sizes="any"
+        className="object-cover object-center"
       />
     </div>
   );

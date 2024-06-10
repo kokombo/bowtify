@@ -12,14 +12,17 @@ const CheckBox = (props: Props) => {
     <Field name={props.name} id={props.id}>
       {({ field }: FieldProps) => {
         return (
-          <Checkbox
-            defaultSelected
-            {...field}
-            radius="none"
-            className="w-[400px] text-xs"
-          >
-            <span className="text-sm  font-medium">{props.label}</span>
-          </Checkbox>
+          <span>
+            <label htmlFor={props.id}></label>
+            <Checkbox
+              defaultSelected
+              {...field}
+              radius="none"
+              className="w-[400px] text-xs"
+            >
+              <span className="text-sm  font-medium">{props.label}</span>
+            </Checkbox>
+          </span>
         );
       }}
     </Field>

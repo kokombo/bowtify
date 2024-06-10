@@ -19,7 +19,7 @@ const TextField = (props: Props) => {
           return (
             <div className="relative border-black border-1">
               <label
-                htmlFor={props.name}
+                htmlFor={props.id}
                 className="text-xs font-bold absolute left-3 top-1"
               >
                 {props.label}

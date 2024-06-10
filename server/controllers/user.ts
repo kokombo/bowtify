@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../utilities/prismaConnect";
+import StatusCodes from "http-status-codes";
 
 const getUserProfile = async (req: Request, res: Response) => {
   try {
@@ -17,13 +18,15 @@ const getUserProfile = async (req: Request, res: Response) => {
     });
 
     if (!user) {
-      return res.status(404).json({ message: "User not found!" });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: "User not found!" });
     }
 
     return res.json(user);
   } catch (error) {
     return res
-      .status(401)
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .json({ message: "Something went wrong, please try again." });
   }
 };
