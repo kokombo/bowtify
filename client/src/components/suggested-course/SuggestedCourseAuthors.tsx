@@ -1,3 +1,5 @@
+import { sliceString } from "@/utilities";
+
 type Props = {
   authors: string[];
 };
@@ -5,9 +7,7 @@ type Props = {
 const SuggestedCourseAuthors = (props: Props) => {
   return (
     <h6 className="text-wrap text-xs capitalize">
-      {props.authors.join(", ").length > 30
-        ? `${props.authors.join(", ").slice(0, 30)}...`
-        : props.authors.join(", ")}
+      {sliceString(props.authors.join(", "), 30)}
     </h6>
   );
 };

@@ -1,3 +1,4 @@
+import { sliceString } from "@/utilities";
 import { IoLocation } from "react-icons/io5";
 
 type Props = {
@@ -6,9 +7,9 @@ type Props = {
 
 const EventVenue = (props: Props) => {
   return (
-    <span className="flex items-center gap-[2px]">
+    <span className="flex items-center gap-[2px] capitalize">
       <IoLocation className="h-4 w-4" scale={1} />
-      <span>{props.location} </span>
+      <span>{sliceString(props.location, 20)}</span>
     </span>
   );
 };

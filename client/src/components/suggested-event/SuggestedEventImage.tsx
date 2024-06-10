@@ -2,15 +2,15 @@ import Image from "next/image";
 
 type Props = {
   image: string;
-  title: string;
+  alt: string;
 };
 
 const SuggestedEventImage = (props: Props) => {
   return (
-    <div className="relative w-[210px] h-full bg-gray">
+    <div className="relative w-[150px] h-full bg-gray">
       <Image
         src={props.image}
-        alt={props.title}
+        alt={props.alt}
         fill
         quality={100}
         loading="lazy"

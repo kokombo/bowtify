@@ -1,5 +1,6 @@
 import { SuggestedEventCard } from "@/components/suggested-event";
 import Link from "next/link";
+import { events } from "../../dummy";
 
 type Props = {
   label: string;
@@ -20,8 +21,8 @@ const SuggestedEvents = (props: Props) => {
       </div>
 
       <div className="grid grid-cols-3 gap-4">
-        {[...Array(3)].map((_, index) => (
-          <SuggestedEventCard key={index} />
+        {events.map((event) => (
+          <SuggestedEventCard key={event.id} event={event} />
         ))}
       </div>
     </section>

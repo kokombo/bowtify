@@ -52,3 +52,15 @@ type Lesson = {
   duration: number;
   courseTitle: string; //to be removed
 };
+
+type EventType = {
+  id: string;
+  name: string;
+  location: string;
+  date: string;
+  time: string;
+  tags: string[];
+  image: string;
+  isPaidEvent: boolean;
+  price?: number;
+};

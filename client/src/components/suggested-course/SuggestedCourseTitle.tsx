@@ -1,3 +1,5 @@
+import { sliceString } from "@/utilities";
+
 type Props = {
   title: string;
 };
@@ -5,7 +7,7 @@ type Props = {
 const SuggestedCourseTitle = (props: Props) => {
   return (
     <h4 className="text-wrap text-lg leading-tight font-bold capitalize">
-      {props.title.length > 40 ? `${props.title.slice(0, 40)}...` : props.title}
+      {sliceString(props.title, 40)}
     </h4>
   );
 };

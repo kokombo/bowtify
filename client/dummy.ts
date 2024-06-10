@@ -159,3 +159,43 @@ export const starterLessons = [
     courseTitle: "JavaScript DOM Dynamic Web Interaction",
   },
 ];
+
+export const events = [
+  {
+    id: "1",
+    name: "Davido musical convert",
+    location: "victoria island, lagos",
+    date: "6/10/2024",
+    time: "7pm",
+    tags: ["music", "Entertainment"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: true,
+    price: 4000,
+  },
+
+  {
+    id: "2",
+    name: "Felabration '24",
+    location: "Fela shrine, lagos",
+    date: "12/24/2024",
+    time: "10pm",
+    tags: ["music", "Entertainment"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: true,
+    price: 1000,
+  },
+
+  {
+    id: "3",
+    name: "Wema bank hackathon",
+    location: "remote",
+    date: "6/12/2024",
+    time: "12pm",
+    tags: ["tech", "hackathon"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: false,
+  },
+];
