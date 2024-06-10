@@ -15,7 +15,7 @@ const StarterLessons = () => {
 
         <Link
           href=""
-          className="text-purple underline font-bold underline-offset-4"
+          className="text-pink-500 underline font-bold underline-offset-4"
         >
           My learning
         </Link>

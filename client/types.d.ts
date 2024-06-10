@@ -62,5 +62,5 @@ type EventType = {
   tags: string[];
   image: string;
   isPaidEvent: boolean;
-  price?: number;
+  startingPrice?: number;
 };

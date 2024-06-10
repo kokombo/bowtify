@@ -9,7 +9,7 @@ const EventVenue = (props: Props) => {
   return (
     <span className="flex items-center gap-[2px] capitalize">
       <IoLocation className="h-4 w-4" scale={1} />
-      <span>{sliceString(props.location, 20)}</span>
+      <span>{sliceString(props.location, 30)}</span>
     </span>
   );
 };

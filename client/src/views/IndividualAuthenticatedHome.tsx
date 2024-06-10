@@ -4,7 +4,7 @@ import {
   SuggestedCourses,
   SuggestedEvents,
 } from "@/containers";
-import { newCourses, suggestedCourses } from "../../dummy";
+import { events, newCourses, suggestedCourses } from "../../dummy";
 
 const IndividualAuthenticatedHome = () => {
   return (
@@ -18,7 +18,10 @@ const IndividualAuthenticatedHome = () => {
         data={suggestedCourses}
       />
 
-      <SuggestedEvents label="Discover latest events & happenings" />
+      <SuggestedEvents
+        label="Discover latest events & happenings"
+        data={events}
+      />
 
       <SuggestedCourses
         label='Because you viewed "Data Science"'
@@ -31,6 +34,8 @@ const IndividualAuthenticatedHome = () => {
         label="Top courses in Backend Development"
         data={suggestedCourses}
       />
+
+      <SuggestedEvents label="Newest events in town" data={events} />
 
       <SuggestedCourses label="Newest Courses on Node.js" data={newCourses} />
     </main>

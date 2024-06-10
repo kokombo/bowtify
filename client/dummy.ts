@@ -163,7 +163,7 @@ export const starterLessons = [
 export const events = [
   {
     id: "1",
-    name: "Davido musical convert",
+    name: "Davido musical concert",
     location: "victoria island, lagos",
     date: "6/10/2024",
     time: "7pm",
@@ -171,7 +171,7 @@ export const events = [
     image:
       "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
     isPaidEvent: true,
-    price: 4000,
+    startingPrice: 4000,
   },
 
   {
@@ -184,7 +184,7 @@ export const events = [
     image:
       "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
     isPaidEvent: true,
-    price: 1000,
+    startingPrice: 1000,
   },
 
   {
