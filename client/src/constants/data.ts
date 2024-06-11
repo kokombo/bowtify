@@ -44,3 +44,54 @@ export const INDIVIDUAL_ACCOUNT_AUTHENTICATED_LINKS = [
     label: "Transaction history",
   },
 ];
+
+export const footerLinks = [
+  {
+    href: "",
+    label: "Bowtify business",
+  },
+  {
+    href: "",
+    label: "About us",
+  },
+  {
+    href: "",
+    label: "Contact us",
+  },
+  {
+    href: "",
+    label: "Careers",
+  },
+  {
+    href: "",
+    label: "Blog",
+  },
+  {
+    href: "",
+    label: "Help and support",
+  },
+  {
+    href: "",
+    label: "Terms",
+  },
+  {
+    href: "",
+    label: "Privacy policy",
+  },
+  {
+    href: "",
+    label: "Cookie policy",
+  },
+  {
+    href: "",
+    label: "Investors",
+  },
+  {
+    href: "",
+    label: "Accessibility",
+  },
+  {
+    href: "",
+    label: "Community",
+  },
+];
