@@ -3,5 +3,6 @@ import MyIcon from "./MyIcon";
 import Duration from "./Duration";
 import Copyright from "./Copyright";
 import FooterLinks from "./FooterLinks";
+import SliderButtons from "./SliderButtons";
 
-export { Divider, MyIcon, Duration, Copyright, FooterLinks };
+export { Divider, MyIcon, Duration, Copyright, FooterLinks, SliderButtons };

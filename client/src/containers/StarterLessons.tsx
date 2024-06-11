@@ -2,9 +2,12 @@ import { StarterLessonCard } from "@/components/starter-lesson";
 import { useCurrentUser } from "@/hooks";
 import Link from "next/link";
 import { starterLessons } from "../../dummy";
+import { Fragment, useState } from "react";
+import { SliderButtons } from "@/components";
 
 const StarterLessons = () => {
   const { user } = useCurrentUser();
+  const [interval, setInterval] = useState<number>(0);
 
   return (
     <section className="paddingX my-16">
@@ -21,10 +24,12 @@ const StarterLessons = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
-        {starterLessons.map((lesson) => (
-          <StarterLessonCard key={lesson.id} lesson={lesson} />
-        ))}
+      <div className="grid grid-cols-3 gap-4 relative">
+        {starterLessons.slice(0 + interval, 3 + interval).map((lesson) => {
+          return <StarterLessonCard key={lesson.id} lesson={lesson} />;
+        })}
+
+        <SliderButtons interval={interval} setInterval={setInterval} />
       </div>
     </section>
   );

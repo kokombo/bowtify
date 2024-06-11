@@ -158,6 +158,48 @@ export const starterLessons = [
     duration: 1500,
     courseTitle: "JavaScript DOM Dynamic Web Interaction",
   },
+  {
+    id: "4",
+    title: "JavaScript Console JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1500,
+    courseTitle: "JavaScript DOM Dynamic Web Interaction",
+  },
+  {
+    id: "5",
+    title: "JavaScript Console JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1500,
+    courseTitle: "JavaScript DOM Dynamic Web Interaction",
+  },
+  {
+    id: "6",
+    title: "JavaScript Console JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1500,
+    courseTitle: "JavaScript DOM Dynamic Web Interaction",
+  },
+  {
+    id: "7",
+    title: "JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1800,
+    courseTitle: "JavaScript Essentials",
+  },
+  {
+    id: "8",
+    title: "JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1800,
+    courseTitle: "JavaScript Essentials",
+  },
+  {
+    id: "9",
+    title: "JavaScript Console",
+    video_url: "https://www.youtube.com/embed/bio_H1-6pDo",
+    duration: 1800,
+    courseTitle: "JavaScript Essentials",
+  },
 ];
 
 export const events = [
