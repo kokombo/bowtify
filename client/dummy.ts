@@ -64,6 +64,67 @@ export const suggestedCourses = [
     isBestSeller: false,
     isNewCourse: false,
   },
+
+  {
+    id: "6",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: false,
+  },
+  {
+    id: "7",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: false,
+  },
+  {
+    id: "8",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: false,
+  },
+  {
+    id: "9",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: false,
+  },
+  {
+    id: "10",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: false,
+  },
 ];
 
 export const newCourses = [
@@ -129,6 +190,72 @@ export const newCourses = [
     rating: 4.9,
     reviewsLength: 1200,
     price: 12500,
+    isBestSeller: false,
+    isNewCourse: true,
+  },
+
+  {
+    id: "6",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Introduction to MongoDB datbase",
+    authors: ["packt publishing"],
+    rating: 4.9,
+    reviewsLength: 1200,
+    price: 12500,
+    isBestSeller: false,
+    isNewCourse: true,
+  },
+
+  {
+    id: "7",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676083/product-images/bibdg4p5ohv88fcyrtio.jpg",
+    title: "Creating a responsive HTML email",
+    authors: ["dave gray", "david obama"],
+    rating: 4.0,
+    reviewsLength: 75,
+    price: 22000,
+    isBestSeller: false,
+    isNewCourse: true,
+  },
+
+  {
+    id: "8",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Learn game development with javascript",
+    authors: ["Dr. angela yu", "jose portila"],
+    rating: 5.0,
+    reviewsLength: 123578,
+    price: 5000,
+    isBestSeller: false,
+    isNewCourse: true,
+  },
+
+  {
+    id: "9",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676083/product-images/bibdg4p5ohv88fcyrtio.jpg",
+    title:
+      "The ultimate fullstack web development bootcamp, front-end development",
+    authors: ["kokombo oluwanbowa", "barnabas ajayi", "enam tony"],
+    rating: 4.9,
+    reviewsLength: 52,
+    price: 67800,
+    isBestSeller: false,
+    isNewCourse: true,
+  },
+
+  {
+    id: "10",
+    thumbNail:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    title: "Python for data science and machine learning bootcamp",
+    authors: ["Jonas armstrong", "michel cabella"],
+    rating: 4.8,
+    reviewsLength: 1340,
+    price: 3500,
     isBestSeller: false,
     isNewCourse: true,
   },
@@ -231,6 +358,39 @@ export const events = [
 
   {
     id: "3",
+    name: "Wema bank hackathon",
+    location: "remote",
+    date: "6/12/2024",
+    time: "12pm",
+    tags: ["tech", "hackathon"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: false,
+  },
+  {
+    id: "4",
+    name: "Wema bank hackathon",
+    location: "remote",
+    date: "6/12/2024",
+    time: "12pm",
+    tags: ["tech", "hackathon"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: false,
+  },
+  {
+    id: "5",
+    name: "Wema bank hackathon",
+    location: "remote",
+    date: "6/12/2024",
+    time: "12pm",
+    tags: ["tech", "hackathon"],
+    image:
+      "https://res.cloudinary.com/dillfekiy/image/upload/v1710676081/product-images/w9dved8rxj6wt8p1czfq.jpg",
+    isPaidEvent: false,
+  },
+  {
+    id: "6",
     name: "Wema bank hackathon",
     location: "remote",
     date: "6/12/2024",

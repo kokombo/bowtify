@@ -5,19 +5,24 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {
   setInterval: Dispatch<SetStateAction<number>>;
-  showPrevButton: boolean;
-  showNextButton: boolean;
   prevButtonClass: string;
   nextButtonClass: string;
+  numberOfDataPerSlider: number;
+  interval: number;
+  numberOfAdditionalSlides: number;
 };
 
 const SliderButtons = (props: Props) => {
   return (
     <Fragment>
       <Fragment>
-        {props.showPrevButton && (
+        {props.interval >= props.numberOfDataPerSlider && (
           <RoundedIconButton
-            onClick={() => props.setInterval((interval) => interval - 3)}
+            onClick={() =>
+              props.setInterval(
+                (interval) => interval - props.numberOfDataPerSlider
+              )
+            }
             icon={GrPrevious}
             classes={twMerge(props.prevButtonClass, "-left-4 ")}
           />
@@ -25,9 +30,14 @@ const SliderButtons = (props: Props) => {
       </Fragment>
 
       <Fragment>
-        {props.showNextButton && (
+        {props.interval <
+          props.numberOfDataPerSlider * props.numberOfAdditionalSlides && (
           <RoundedIconButton
-            onClick={() => props.setInterval((interval) => interval + 3)}
+            onClick={() =>
+              props.setInterval(
+                (interval) => interval + props.numberOfDataPerSlider
+              )
+            }
             icon={GrNext}
             classes={twMerge(props.nextButtonClass, "-right-4 ")}
           />

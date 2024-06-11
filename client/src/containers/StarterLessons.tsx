@@ -9,6 +9,8 @@ const StarterLessons = () => {
   const { user } = useCurrentUser();
   const [interval, setInterval] = useState<number>(0);
 
+  const numberOfDataPerSlider = 3;
+
   return (
     <section className="paddingX my-16">
       <div className="flex items-center justify-between mb-8">
@@ -25,16 +27,19 @@ const StarterLessons = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 relative">
-        {starterLessons.slice(0 + interval, 3 + interval).map((lesson) => {
-          return <StarterLessonCard key={lesson.id} lesson={lesson} />;
-        })}
+        {starterLessons
+          .slice(0 + interval, numberOfDataPerSlider + interval)
+          .map((lesson) => {
+            return <StarterLessonCard key={lesson.id} lesson={lesson} />;
+          })}
 
         <SliderButtons
           setInterval={setInterval}
-          showPrevButton={interval >= 3}
-          showNextButton={interval < 6}
+          interval={interval}
+          numberOfAdditionalSlides={2}
           prevButtonClass="top-1/2 -translate-y-1/2"
           nextButtonClass="top-1/2 -translate-y-1/2"
+          numberOfDataPerSlider={numberOfDataPerSlider}
         />
       </div>
     </section>
