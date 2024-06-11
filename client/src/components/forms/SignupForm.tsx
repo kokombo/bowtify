@@ -31,7 +31,7 @@ const SignupForm = (props: Props) => {
       validateOnChange={false}
     >
       <Form className="flex flex-col gap-6">
-        <h1 className="text-base font-bold self-center">{props.formLabel}</h1>
+        <h1 className="text-lg font-bold self-center">{props.formLabel}</h1>
 
         <TextField
           type="text"

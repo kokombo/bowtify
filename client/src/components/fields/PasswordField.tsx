@@ -6,7 +6,7 @@ const PasswordField = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className=" flex items-center gap-2 relative w-fit">
+    <div className="relative w-fit">
       <TextField
         name="password"
         id="password"
@@ -16,18 +16,17 @@ const PasswordField = () => {
         label="Password"
       />
 
-      <span className="absolute right-2 top-4">
-        <button
-          type="button"
-          onClick={() => setShowPassword((showPassword) => !showPassword)}
-        >
-          {showPassword ? (
-            <BiHide className="h-5 w-5" />
-          ) : (
-            <BiShow className="h-5 w-5" />
-          )}
-        </button>
-      </span>
+      <button
+        type="button"
+        onClick={() => setShowPassword((showPassword) => !showPassword)}
+        className="absolute right-2 top-1/2 -translate-y-1/2"
+      >
+        {showPassword ? (
+          <BiHide className="h-5 w-5" />
+        ) : (
+          <BiShow className="h-5 w-5" />
+        )}
+      </button>
     </div>
   );
 };

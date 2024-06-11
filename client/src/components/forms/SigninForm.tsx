@@ -24,7 +24,7 @@ const SigninForm = (props: Props) => {
       validateOnBlur={false}
     >
       <Form className="flex flex-col gap-6">
-        <h1 className="text-base font-bold self-center">
+        <h1 className="text-lg font-bold self-center text-black">
           Sign in to your Bowtify Account
         </h1>
 

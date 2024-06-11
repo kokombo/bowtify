@@ -20,14 +20,14 @@ const TextField = (props: Props) => {
             <div className="relative border-black border-1">
               <label
                 htmlFor={props.id}
-                className="text-xs font-bold absolute left-3 top-1"
+                className="text-xs font-bold absolute left-3 top-1 text-black"
               >
                 {props.label}
               </label>
 
               <input
                 {...field}
-                className="w-[400px] px-3 pt-6 pb-2 text-sm lg:text-base outline-none"
+                className="w-[400px] px-3 pt-6 pb-2 text-sm lg:text-base outline-none text-black"
                 type={props.type}
                 autoComplete={props.autoComplete}
                 disabled={props.disabled}
