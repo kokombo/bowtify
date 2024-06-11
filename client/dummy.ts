@@ -110,7 +110,7 @@ export const suggestedCourses = [
     rating: 4.9,
     reviewsLength: 1200,
     price: 12500,
-    isBestSeller: false,
+    isBestSeller: true,
     isNewCourse: false,
   },
   {
@@ -122,7 +122,7 @@ export const suggestedCourses = [
     rating: 4.9,
     reviewsLength: 1200,
     price: 12500,
-    isBestSeller: false,
+    isBestSeller: true,
     isNewCourse: false,
   },
 ];
