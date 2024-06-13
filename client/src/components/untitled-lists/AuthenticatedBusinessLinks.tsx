@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AuthenticatedBusinessLinks = () => {
   return (
-    <DropdownMenu>
+    <DropdownMenu variant="flat" aria-label="Static Actions">
       <DropdownItem key="courses" className="mb-1">
         <Link href="#">My courses</Link>
       </DropdownItem>

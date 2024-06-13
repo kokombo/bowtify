@@ -3,9 +3,9 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {
   fontSize: string;
-  paddingY: string;
-  paddingX: string;
-  cursorEnabled: boolean;
+  height: string;
+  width: string;
+  cursorEnabled?: boolean;
 };
 
 const ProfileImage = (props: Props) => {
@@ -14,10 +14,10 @@ const ProfileImage = (props: Props) => {
   return (
     <div
       className={twMerge(
-        "bg-black text-white font-semibold rounded-full",
+        "bg-black text-white font-semibold rounded-full flex items-center justify-center",
         props.fontSize,
-        props.paddingX,
-        props.paddingY,
+        props.height,
+        props.width,
         props.cursorEnabled && "cursor-pointer"
       )}
     >

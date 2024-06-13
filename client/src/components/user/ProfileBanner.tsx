@@ -8,8 +8,8 @@ const ProfileBanner = () => {
     <div className="paddingX my-12">
       <article className="flex items-center gap-4">
         <ProfileImage
-          paddingX="px-6"
-          paddingY="py-5"
+          height="h-20"
+          width="w-20"
           cursorEnabled={false}
           fontSize="text-3xl"
         />

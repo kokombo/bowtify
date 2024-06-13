@@ -1,21 +1,20 @@
 import { useCurrentUser } from "@/hooks";
 import { Dropdown, DropdownTrigger } from "@nextui-org/react";
-
 import {
   AuthenticatedBusinessLinks,
   AuthenticatedIndividualLinks,
 } from "../untitled-lists";
+import { ProfileImage } from "../user";
 
 const AccountDropdown = () => {
-  const { user, isBusinessAccount, isIndividualAccount } = useCurrentUser();
+  const { isBusinessAccount, isIndividualAccount } = useCurrentUser();
 
   return (
-    <Dropdown backdrop="transparent">
+    <Dropdown backdrop="transparent" radius="sm">
       <DropdownTrigger>
-        <div className="bg-black text-white text-lg font-semibold h-11 w-11 rounded-full cursor-pointer flex items-center justify-center">
-          {user?.first_name.slice(0, 1)}
-          {user?.last_name.slice(0, 1)}
-        </div>
+        <button type="button">
+          <ProfileImage height="h-10" width="w-10" fontSize="text-lg" />
+        </button>
       </DropdownTrigger>
 
       {isIndividualAccount && <AuthenticatedIndividualLinks />}

@@ -41,25 +41,27 @@ const HomeNavigationBar = () => {
               ) : null}
             </Fragment>
 
-            {session ? (
-              <Fragment>
-                <Link href="">
-                  <MyIcon icon={LuHeart} />
-                </Link>
+            <Fragment>
+              {session ? (
+                <Fragment>
+                  <Link href="">
+                    <MyIcon icon={LuHeart} />
+                  </Link>
 
-                <Link href="">
-                  <MyIcon icon={CgBell} />
-                </Link>
+                  <Link href="">
+                    <MyIcon icon={CgBell} />
+                  </Link>
 
-                <AccountDropdown />
-              </Fragment>
-            ) : (
-              <Fragment>
-                <BorderedLink href="/account/login" label="Sign In" />
+                  <AccountDropdown />
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <BorderedLink href="/account/login" label="Sign In" />
 
-                <ColorLink href="/account/signup" label="Sign Up" />
-              </Fragment>
-            )}
+                  <ColorLink href="/account/signup" label="Sign Up" />
+                </Fragment>
+              )}
+            </Fragment>
           </div>
         )}
       </Fragment>
