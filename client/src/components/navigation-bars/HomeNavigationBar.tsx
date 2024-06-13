@@ -3,13 +3,13 @@ import { BowtifyLogo } from "../logos";
 import { MainSearchBox } from "../search-boxes";
 import { BorderedLink, ColorLink } from "../buttons";
 import { FaShoppingCart } from "react-icons/fa";
-import { NAV_LINKS } from "@/constants/data";
 import { useCurrentUser } from "@/hooks";
 import { Fragment } from "react";
 import { LuHeart } from "react-icons/lu";
 import { CgBell } from "react-icons/cg";
 import MyIcon from "../MyIcon";
-import { ProfileIcon } from "../icons";
+import { AccountDropdown } from "../dropdowns";
+import { NavLinks } from "../untitled-lists";
 
 const HomeNavigationBar = () => {
   const { session, sessionLoading, isIndividualAccount } = useCurrentUser();
@@ -26,13 +26,7 @@ const HomeNavigationBar = () => {
 
       <MainSearchBox />
 
-      <ul className="flex items-center gap-6">
-        {NAV_LINKS.map((item, index) => (
-          <li key={index} className="text-sm hover:underline ">
-            <Link href={item.href}>{item.label} </Link>
-          </li>
-        ))}
-      </ul>
+      <NavLinks />
 
       <Fragment>
         {sessionLoading ? (
@@ -57,7 +51,7 @@ const HomeNavigationBar = () => {
                   <MyIcon icon={CgBell} />
                 </Link>
 
-                <ProfileIcon />
+                <AccountDropdown />
               </Fragment>
             ) : (
               <Fragment>

@@ -7,7 +7,7 @@ const IndividualAccountSignupPage = () => {
     <SignupPage
       formLabel="Sign up to access courses and events"
       accountType="individual"
-      callbackUrl=""
+      callbackUrl="/"
     />
   );
 };
