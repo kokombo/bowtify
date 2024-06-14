@@ -5,17 +5,22 @@ import {
   SuggestedCourses,
   SuggestedEvents,
 } from "@/containers";
-import { events, newCourses, suggestedCourses } from "../../dummy";
+import {
+  events,
+  newCourses,
+  starterLessons,
+  suggestedCourses,
+} from "../../dummy";
 import { HomeNavigationBar } from "@/components/navigation-bars";
 import { DispatchType } from "@/redux-toolkit/store";
 import { useDispatch } from "react-redux";
-import { useGetUserProfile } from "@/hooks";
+import { useCurrentUser, useGetUserProfile } from "@/hooks";
 import { useEffect } from "react";
 import { setUserProfile } from "@/redux-toolkit/slices/user";
 
 const IndividualAuthenticatedHome = () => {
   const dispatch: DispatchType = useDispatch();
-
+  const { user } = useCurrentUser();
   const { data } = useGetUserProfile();
 
   useEffect(() => {
@@ -30,33 +35,41 @@ const IndividualAuthenticatedHome = () => {
 
       <BillBoard />
 
-      <StarterLessons />
+      <StarterLessons
+        heading={` Let's start learning, ${user?.first_name}`}
+        linkHref=""
+        linkLabel="My Learning"
+        data={starterLessons}
+      />
 
       <SuggestedCourses
-        label="Because you searched for Front-end Development"
+        heading="Because you searched for Front-end Development"
         data={suggestedCourses}
       />
 
       <SuggestedEvents
-        label="Discover latest events & happenings"
+        heading="Discover latest events & happenings"
         data={events}
       />
 
       <SuggestedCourses
-        label='Because you viewed "Data Science"'
+        heading='Because you viewed "Data Science"'
         data={suggestedCourses}
       />
-
-      <SuggestedCourses label="Learners are viewings" data={suggestedCourses} />
 
       <SuggestedCourses
-        label="Top courses in Backend Development"
+        heading="Learners are viewings"
         data={suggestedCourses}
       />
 
-      <SuggestedEvents label="Newest events in town" data={events} />
+      <SuggestedCourses
+        heading="Top courses in Backend Development"
+        data={suggestedCourses}
+      />
 
-      <SuggestedCourses label="Newest Courses on Node.js" data={newCourses} />
+      <SuggestedEvents heading="Newest events in town" data={events} />
+
+      <SuggestedCourses heading="Newest Courses on Node.js" data={newCourses} />
     </main>
   );
 };

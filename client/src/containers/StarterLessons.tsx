@@ -1,12 +1,16 @@
 import { StarterLessonCard } from "@/components/starter-lesson";
-import { useCurrentUser } from "@/hooks";
 import Link from "next/link";
-import { starterLessons } from "../../dummy";
 import { useState } from "react";
 import { SliderButtons } from "@/components";
 
-const StarterLessons = () => {
-  const { user } = useCurrentUser();
+type Props = {
+  heading: string;
+  linkLabel: string;
+  linkHref: string;
+  data: Lesson[];
+};
+
+const StarterLessons = (props: Props) => {
   const [interval, setInterval] = useState<number>(0);
 
   const numberOfDataPerSlider = 3;
@@ -14,20 +18,18 @@ const StarterLessons = () => {
   return (
     <section className="paddingX my-16">
       <div className="flex items-center justify-between mb-8">
-        <h4 className="text-3xl font-bold">
-          Let{"'"}s start learning, {user?.first_name}
-        </h4>
+        <h4 className="text-3xl font-bold">{props.heading}</h4>
 
         <Link
-          href=""
+          href={props.linkHref}
           className="text-pink-500 underline font-bold underline-offset-4"
         >
-          My learning
+          {props.linkLabel}
         </Link>
       </div>
 
       <div className="grid grid-cols-3 gap-4 relative">
-        {starterLessons
+        {props.data
           .slice(0 + interval, numberOfDataPerSlider + interval)
           .map((lesson) => {
             return <StarterLessonCard key={lesson.id} lesson={lesson} />;

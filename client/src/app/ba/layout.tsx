@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import "../globals.css";
+import { useEffect } from "react";
 import { DispatchType } from "@/redux-toolkit/store";
 import { useDispatch } from "react-redux";
 import { useGetUserProfile } from "@/hooks";

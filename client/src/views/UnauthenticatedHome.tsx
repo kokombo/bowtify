@@ -13,9 +13,12 @@ const UnauthenticatedHome = () => {
 
       <UnauthenticatedHomeHero />
 
-      <SuggestedCourses label="Learners are viewing" data={suggestedCourses} />
+      <SuggestedCourses
+        heading="Learners are viewing"
+        data={suggestedCourses}
+      />
 
-      <SuggestedEvents label="Discover latest events" data={events} />
+      <SuggestedEvents heading="Discover latest events" data={events} />
     </main>
   );
 };

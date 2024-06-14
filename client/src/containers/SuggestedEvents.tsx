@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 type Props = {
-  label: string;
+  heading: string;
   data: EventType[];
 };
 
@@ -16,7 +16,7 @@ const SuggestedEvents = (props: Props) => {
   return (
     <section className="paddingX my-16">
       <div className="flex items-center justify-between mb-5">
-        <h4 className="text-2xl font-bold">{props.label}</h4>
+        <h4 className="text-2xl font-bold">{props.heading}</h4>
 
         <Link
           href=""

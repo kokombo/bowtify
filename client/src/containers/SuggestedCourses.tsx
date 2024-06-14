@@ -3,7 +3,7 @@ import { SuggestedCourseCard } from "@/components/suggested-course";
 import { useState } from "react";
 
 type Props = {
-  label: string;
+  heading: string;
   data: Course[] | undefined;
 };
 
@@ -14,7 +14,7 @@ const SuggestedCourses = (props: Props) => {
 
   return (
     <section className="paddingX my-16">
-      <h2 className="mb-5 text-2xl font-bold">{props.label}</h2>
+      <h2 className="mb-5 text-2xl font-bold">{props.heading}</h2>
 
       <div className="grid grid-cols-5 gap-3 relative">
         {props.data

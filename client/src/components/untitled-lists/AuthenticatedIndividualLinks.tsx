@@ -22,7 +22,7 @@ const AuthenticatedIndividualLinks = () => {
         className="mb-1"
         textValue="bowtifyBusiness"
       >
-        <Link href="#">Bowtify business</Link>
+        <Link href="/business/overview">Bowtify business</Link>
       </DropdownItem>
 
       <DropdownItem
