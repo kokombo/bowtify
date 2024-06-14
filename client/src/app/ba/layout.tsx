@@ -1,11 +1,12 @@
 "use client";
 
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import "../globals.css";
 import { DispatchType } from "@/redux-toolkit/store";
 import { useDispatch } from "react-redux";
 import { useGetUserProfile } from "@/hooks";
 import { setUserProfile } from "@/redux-toolkit/slices/user";
+import { ProtectRoute } from "@/components";
 
 export default function BusinessAccountLayout({
   children,
@@ -20,5 +21,5 @@ export default function BusinessAccountLayout({
     dispatch(setUserProfile(data));
   }, [data, dispatch]);
 
-  return <Fragment>{children}</Fragment>;
+  return <ProtectRoute>{children}</ProtectRoute>;
 }

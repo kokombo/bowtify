@@ -1,5 +1,6 @@
-import { Copyright, FooterLinks } from "@/components";
+import { Copyright } from "@/components";
 import { BowtifyLogo } from "@/components/logos";
+import { FooterLinks } from "@/components/untitled-lists";
 
 const Footer = () => {
   return (
