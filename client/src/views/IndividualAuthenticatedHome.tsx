@@ -6,10 +6,13 @@ import {
   SuggestedEvents,
 } from "@/containers";
 import { events, newCourses, suggestedCourses } from "../../dummy";
+import { HomeNavigationBar } from "@/components/navigation-bars";
 
 const IndividualAuthenticatedHome = () => {
   return (
     <main>
+      <HomeNavigationBar />
+
       <ProfileBanner />
 
       <BillBoard />

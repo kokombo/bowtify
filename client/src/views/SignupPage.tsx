@@ -6,7 +6,6 @@ import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 type Props = {
   formLabel: string;
@@ -24,15 +23,13 @@ const SignupPage = (props: Props) => {
     accountType: props.accountType,
   };
 
-  const router = useRouter();
-
   const signupRequest = async (formData: SignupFormType) => {
     const res = await axios.post(apiBaseUrl + "/auth/signup", formData);
 
     return res.data;
   };
 
-  const { mutateAsync, data, isError, isPending, error } = useMutation<
+  const { mutateAsync, isError, isPending, error } = useMutation<
     AuthDataResponse,
     AxiosError<AuthErrorResponse>,
     SignupFormType
@@ -50,11 +47,10 @@ const SignupPage = (props: Props) => {
         email: values.email,
         password: values.password,
         callbackUrl: props.callbackUrl,
-        redirect: false,
+        redirect: true,
       }).then((res) => {
         if (res?.ok) {
           onsubmitProps.resetForm();
-          router.push(props.callbackUrl);
         }
       });
     });

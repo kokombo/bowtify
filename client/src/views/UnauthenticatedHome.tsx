@@ -1,5 +1,12 @@
+import { HomeNavigationBar } from "@/components/navigation-bars";
+
 const UnauthenticatedHome = () => {
-  return <div>UnauthenticatedHome</div>;
+  return (
+    <main>
+      <HomeNavigationBar />
+      UnauthenticatedHome
+    </main>
+  );
 };
 
 export default UnauthenticatedHome;

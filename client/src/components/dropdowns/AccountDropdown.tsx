@@ -12,9 +12,14 @@ const AccountDropdown = () => {
   return (
     <Dropdown backdrop="transparent" radius="sm">
       <DropdownTrigger>
-        <button type="button">
-          <ProfileImage height="h-10" width="w-10" fontSize="text-lg" />
-        </button>
+        <span>
+          <ProfileImage
+            height="h-10"
+            width="w-10"
+            fontSize="text-lg"
+            cursorEnabled
+          />
+        </span>
       </DropdownTrigger>
 
       {isIndividualAccount && <AuthenticatedIndividualLinks />}

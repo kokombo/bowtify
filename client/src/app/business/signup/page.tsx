@@ -7,7 +7,7 @@ const BusinessAccountSignupPage = () => {
     <SignupPage
       formLabel="Start listing courses or events on Bowtify"
       accountType="business"
-      callbackUrl="/"
+      callbackUrl="/ba/dashboard"
     />
   );
 };

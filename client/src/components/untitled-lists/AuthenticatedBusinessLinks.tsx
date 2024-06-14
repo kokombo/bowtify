@@ -5,20 +5,24 @@ import Link from "next/link";
 const AuthenticatedBusinessLinks = () => {
   return (
     <DropdownMenu variant="flat" aria-label="Static Actions">
-      <DropdownItem key="courses" className="mb-1">
-        <Link href="#">My courses</Link>
+      <DropdownItem key="courses" className="mb-1" textValue="courses">
+        <Link href="/ba/courses">My courses</Link>
       </DropdownItem>
 
-      <DropdownItem key="notifications" className="mb-1">
+      <DropdownItem
+        key="notifications"
+        className="mb-1"
+        textValue="notifications"
+      >
         <Link href="#">Notifications</Link>
       </DropdownItem>
 
-      <DropdownItem key="settings" className="mb-1">
+      <DropdownItem key="settings" className="mb-1" textValue="settings">
         <Link href="#">Account Settings</Link>
       </DropdownItem>
 
-      <DropdownItem key="transaction" className="mb-1">
-        <button type="button" onClick={() => signOut()}>
+      <DropdownItem key="signout" className="mb-1" textValue="signout">
+        <button type="button" onClick={() => signOut({ callbackUrl: "/" })}>
           Sign out
         </button>
       </DropdownItem>
