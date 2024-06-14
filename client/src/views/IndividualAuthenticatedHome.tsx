@@ -7,8 +7,21 @@ import {
 } from "@/containers";
 import { events, newCourses, suggestedCourses } from "../../dummy";
 import { HomeNavigationBar } from "@/components/navigation-bars";
+import { DispatchType } from "@/redux-toolkit/store";
+import { useDispatch } from "react-redux";
+import { useGetUserProfile } from "@/hooks";
+import { useEffect } from "react";
+import { setUserProfile } from "@/redux-toolkit/slices/user";
 
 const IndividualAuthenticatedHome = () => {
+  const dispatch: DispatchType = useDispatch();
+
+  const { data } = useGetUserProfile();
+
+  useEffect(() => {
+    dispatch(setUserProfile(data));
+  }, [data, dispatch]);
+
   return (
     <main>
       <HomeNavigationBar />

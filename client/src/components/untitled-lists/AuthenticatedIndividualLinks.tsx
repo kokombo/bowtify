@@ -1,6 +1,6 @@
 import { DropdownItem, DropdownMenu } from "@nextui-org/react";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { Signout } from "../buttons";
 
 const AuthenticatedIndividualLinks = () => {
   return (
@@ -42,9 +42,7 @@ const AuthenticatedIndividualLinks = () => {
       </DropdownItem>
 
       <DropdownItem key="signout" className="mb-1" textValue="signout">
-        <button type="button" onClick={() => signOut({ callbackUrl: "/" })}>
-          Sign out
-        </button>
+        <Signout />
       </DropdownItem>
     </DropdownMenu>
   );
