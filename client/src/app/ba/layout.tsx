@@ -14,7 +14,6 @@ export default function BusinessAccountLayout({
   children: React.ReactNode;
 }>) {
   const dispatch: DispatchType = useDispatch();
-
   const { data } = useGetUserProfile();
 
   useEffect(() => {
