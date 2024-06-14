@@ -1,3 +1,4 @@
 import HomeNavigationBar from "./HomeNavigationBar";
+import BusinessAccountNavBar from "./BusinessAccountNavBar";
 
-export { HomeNavigationBar };
+export { HomeNavigationBar, BusinessAccountNavBar };

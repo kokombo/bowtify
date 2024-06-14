@@ -20,8 +20,8 @@ import { setUserProfile } from "@/redux-toolkit/slices/user";
 
 const IndividualAuthenticatedHome = () => {
   const dispatch: DispatchType = useDispatch();
-  const { user } = useCurrentUser();
   const { data } = useGetUserProfile();
+  const { user } = useCurrentUser();
 
   useEffect(() => {
     dispatch(setUserProfile(data));

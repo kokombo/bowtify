@@ -1,5 +1,3 @@
-"use client";
-
 import { SignupForm } from "@/components/forms";
 import { apiBaseUrl } from "@/constants/data";
 import { useMutation } from "@tanstack/react-query";
@@ -25,7 +23,6 @@ const SignupPage = (props: Props) => {
 
   const signupRequest = async (formData: SignupFormType) => {
     const res = await axios.post(apiBaseUrl + "/auth/signup", formData);
-
     return res.data;
   };
 
@@ -47,7 +44,6 @@ const SignupPage = (props: Props) => {
         email: values.email,
         password: values.password,
         callbackUrl: props.callbackUrl,
-        redirect: true,
       }).then((res) => {
         if (res?.ok) {
           onsubmitProps.resetForm();
