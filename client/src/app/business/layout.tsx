@@ -1,8 +1,8 @@
 "use client";
 
+import { Fragment } from "react";
 import "../globals.css";
 import { HomeNavigationBar } from "@/components/navigation-bars";
-import { RedirectUser } from "@/components";
 
 export default function BusinessAccountOverviewLayout({
   children,
@@ -10,9 +10,9 @@ export default function BusinessAccountOverviewLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <RedirectUser>
+    <Fragment>
       <HomeNavigationBar />
       {children}
-    </RedirectUser>
+    </Fragment>
   );
 }

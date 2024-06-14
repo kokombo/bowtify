@@ -4,7 +4,8 @@ import Duration from "./Duration";
 import Copyright from "./Copyright";
 import FooterLinks from "./FooterLinks";
 import SliderButtons from "./SliderButtons";
-import RedirectUser from "./RedirectUser";
+import RedirectAuthUser from "./RedirectAuthUser";
+import RedirectUserToSegment from "./RedirectUserToSegment";
 
 export {
   Divider,
@@ -13,5 +14,6 @@ export {
   Copyright,
   FooterLinks,
   SliderButtons,
-  RedirectUser,
+  RedirectAuthUser,
+  RedirectUserToSegment,
 };

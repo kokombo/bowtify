@@ -1,6 +1,6 @@
 "use client";
 
-import { RedirectUser } from "@/components";
+import { RedirectUserToSegment } from "@/components";
 import { useGetUserProfile } from "@/hooks";
 import { setUserProfile } from "@/redux-toolkit/slices/user";
 import { DispatchType } from "@/redux-toolkit/store";
@@ -18,9 +18,9 @@ const Home = () => {
   }, [data, dispatch]);
 
   return (
-    <RedirectUser>
+    <RedirectUserToSegment>
       <UnauthenticatedHome />;
-    </RedirectUser>
+    </RedirectUserToSegment>
   );
 };
 

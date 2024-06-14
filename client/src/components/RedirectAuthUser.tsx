@@ -2,7 +2,7 @@ import { useCurrentUser } from "@/hooks";
 import { useRouter } from "next/navigation";
 import { Fragment, useEffect } from "react";
 
-const RedirectUser = ({
+const RedirectAuthUser = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -32,4 +32,4 @@ const RedirectUser = ({
   return null;
 };
 
-export default RedirectUser;
+export default RedirectAuthUser;

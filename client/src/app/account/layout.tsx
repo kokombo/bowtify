@@ -2,7 +2,7 @@
 
 import "../globals.css";
 import { HomeNavigationBar } from "@/components/navigation-bars";
-import { RedirectUser } from "@/components";
+import { RedirectAuthUser } from "@/components";
 
 export default function AuthOperationsLayout({
   children,
@@ -10,9 +10,9 @@ export default function AuthOperationsLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <RedirectUser>
+    <RedirectAuthUser>
       <HomeNavigationBar />
       {children}
-    </RedirectUser>
+    </RedirectAuthUser>
   );
 }
