@@ -132,6 +132,4 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-const handleSession = async (req: Request, res: Response) => {};
-
-export { register, login, handleSession };
+export { register, login };
