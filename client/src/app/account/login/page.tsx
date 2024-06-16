@@ -5,6 +5,7 @@ import { authError } from "@/constants/data";
 import { useClearErrorMessage, useCurrentUser } from "@/hooks";
 import { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const initialFormValues: SigninFormType = {
@@ -15,6 +16,7 @@ const initialFormValues: SigninFormType = {
 const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const signin = async (
     values: SigninFormType,
@@ -25,11 +27,11 @@ const Login = () => {
 
       const res = await signIn("credentials", {
         ...values,
-        callbackUrl: "/",
-        redirect: true,
+        redirect: false,
       });
 
       if (res?.ok) {
+        router.push("/");
         onsubmitProps.resetForm();
       }
 

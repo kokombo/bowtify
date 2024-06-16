@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 type Props = {
   formLabel: string;
@@ -20,6 +21,8 @@ const SignupPage = (props: Props) => {
     subscribeToEmail: true,
     accountType: props.accountType,
   };
+
+  const router = useRouter();
 
   const signupRequest = async (formData: SignupFormType) => {
     const res = await axios.post(apiBaseUrl + "/auth/signup", formData);
@@ -43,9 +46,10 @@ const SignupPage = (props: Props) => {
       await signIn("credentials", {
         email: values.email,
         password: values.password,
-        callbackUrl: props.callbackUrl,
+        redirect: false,
       }).then((res) => {
         if (res?.ok) {
+          router.push(props.callbackUrl);
           onsubmitProps.resetForm();
         }
       });
