@@ -65,7 +65,7 @@ const register = async (req: Request, res: Response) => {
         });
       })
       .catch((error: Error) => {
-        res.json({ error });
+        res.json({ message: error.message });
       });
   } catch (error) {
     if (error instanceof ValidationError) {
@@ -115,7 +115,7 @@ const login = async (req: Request, res: Response) => {
         res.json({ accessToken: token, accountType: user.account_type });
       })
       .catch((error: Error) => {
-        res.json(error);
+        res.json({ message: error.message });
       });
   } catch (error) {
     if (error instanceof ValidationError) {
