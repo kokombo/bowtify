@@ -29,6 +29,8 @@ export const useGetUserProfile = () => {
     enabled: !!session,
   });
 
+  console.log(data, isLoading, isSuccess);
+
   useEffect(() => {
     if (isSuccess) {
       dispatch(setUserProfile(data));
