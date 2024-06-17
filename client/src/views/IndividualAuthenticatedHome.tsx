@@ -15,7 +15,7 @@ import { HomeNavigationBar } from "@/components/navigation-bars";
 import { useCurrentUser } from "@/hooks";
 
 const IndividualAuthenticatedHome = () => {
-  const { user } = useCurrentUser();
+  const { firstName } = useCurrentUser();
 
   return (
     <main>
@@ -26,7 +26,7 @@ const IndividualAuthenticatedHome = () => {
       <BillBoard />
 
       <StarterLessons
-        heading={` Let's start learning, ${user?.first_name}`}
+        heading={` Let's start learning, ${firstName}`}
         linkHref=""
         linkLabel="My Learning"
         data={starterLessons}

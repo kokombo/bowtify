@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ProfileImage = (props: Props) => {
-  const { user } = useCurrentUser();
+  const { firstName, lastName } = useCurrentUser();
 
   return (
     <div
@@ -21,8 +21,8 @@ const ProfileImage = (props: Props) => {
         props.cursorEnabled && "cursor-pointer"
       )}
     >
-      {user?.first_name.slice(0, 1)}
-      {user?.last_name.slice(0, 1)}
+      {firstName?.slice(0, 1)}
+      {lastName?.slice(0, 1)}
     </div>
   );
 };

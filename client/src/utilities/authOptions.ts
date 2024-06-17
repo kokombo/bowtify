@@ -55,6 +55,8 @@ export const authOptions: NextAuthOptions = {
         if (trigger === "signIn") {
           token.accessToken = user.accessToken;
           token.accountType = user.accountType;
+          token.firstName = user.firstName;
+          token.lastName = user.lastName;
         }
       }
 
@@ -64,6 +66,8 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       session.user.accessToken = token.accessToken;
       session.user.accountType = token.accountType;
+      session.user.firstName = token.firstName;
+      session.user.lastName = token.lastName;
 
       return session;
     },

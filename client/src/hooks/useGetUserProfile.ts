@@ -30,9 +30,7 @@ export const useGetUserProfile = () => {
   });
 
   useEffect(() => {
-    if (isSuccess) {
-      dispatch(setUserProfile(data));
-    }
+    dispatch(setUserProfile(data));
   }, [data, dispatch, isSuccess]);
 
   return { isLoading };

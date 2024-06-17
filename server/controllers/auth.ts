@@ -112,7 +112,12 @@ const login = async (req: Request, res: Response) => {
       expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
     })
       .then((token) => {
-        res.json({ accessToken: token, accountType: user.account_type });
+        res.json({
+          accessToken: token,
+          accountType: user.account_type,
+          firstName: user.first_name,
+          lastName: user.last_name,
+        });
       })
       .catch((error: Error) => {
         res.json({ message: error.message });

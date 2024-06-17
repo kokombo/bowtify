@@ -10,6 +10,8 @@ export const useCurrentUser = () => {
   const isIndividualAccount = session?.user.accountType === "individual";
   const isBusinessAccount = session?.user.accountType === "business";
   const sessionLoading = status === "loading";
+  const firstName = session?.user.firstName;
+  const lastName = session?.user.lastName;
 
   return {
     accessToken,
@@ -18,5 +20,7 @@ export const useCurrentUser = () => {
     session,
     sessionLoading,
     user,
+    firstName,
+    lastName,
   };
 };

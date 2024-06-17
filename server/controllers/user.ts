@@ -10,8 +10,6 @@ const getUserProfile = async (req: Request, res: Response) => {
       },
       select: {
         id: true,
-        first_name: true,
-        last_name: true,
         email: true,
         subscribe_to_email: true,
       },
