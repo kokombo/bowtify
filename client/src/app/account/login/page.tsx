@@ -15,7 +15,7 @@ const initialFormValues: SigninFormType = {
 };
 
 const Login = () => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 

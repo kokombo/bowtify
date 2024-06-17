@@ -12,7 +12,7 @@ type Props = {
     values: SigninFormType,
     formikHelpers: FormikHelpers<SigninFormType>
   ) => Promise<void>;
-  error: string;
+  error: string | undefined;
   isLoading: boolean;
 };
 

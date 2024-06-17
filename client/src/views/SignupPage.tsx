@@ -1,6 +1,7 @@
 import { SignupForm } from "@/components/forms";
 import { OverlayTransparentLoader } from "@/components/loaders";
 import { apiBaseUrl } from "@/constants/data";
+import { useClearErrorMessage } from "@/hooks";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { FormikHelpers } from "formik";
@@ -25,6 +26,7 @@ const SignupPage = (props: Props) => {
   };
 
   const [signingIn, setSigningIn] = useState(false);
+  const [error, setError] = useState<string | undefined>(undefined);
   const router = useRouter();
 
   const signupRequest = async (formData: SignupFormType) => {
@@ -37,13 +39,16 @@ const SignupPage = (props: Props) => {
     return res.data;
   };
 
-  const { mutateAsync, isError, isPending, error } = useMutation<
+  const { mutateAsync, isError, isPending } = useMutation<
     AuthDataResponse,
     AxiosError<AuthErrorResponse>,
     SignupFormType
   >({
     mutationKey: ["signup"],
     mutationFn: signupRequest,
+    onError: (error) => {
+      setError(error.response?.data.message);
+    },
   });
 
   const signup = async (
@@ -69,6 +74,8 @@ const SignupPage = (props: Props) => {
         });
     });
   };
+
+  useClearErrorMessage(setError);
 
   return (
     <main className="grid place-items-center py-14">

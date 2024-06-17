@@ -1,4 +1,3 @@
-import { AxiosError } from "axios";
 import { CheckBox, PasswordField, TextField } from "../fields";
 import { Form, Formik, FormikHelpers } from "formik";
 import { signupValidationSchema } from "@/utilities/validationSchemas";
@@ -15,7 +14,7 @@ type Props = {
     values: SignupFormType,
     formikHelpers: FormikHelpers<SignupFormType>
   ) => Promise<void>;
-  error: AxiosError<AuthErrorResponse> | null;
+  error: string | undefined;
   isPending: boolean;
   isError: boolean;
   formLabel: string;
@@ -69,17 +68,14 @@ const SignupForm = (props: Props) => {
           }
         />
 
+        {props.error && (
+          <CustomError message={props.error} class="self-center" />
+        )}
+
         <FormButton
           label={props.isPending ? "Signing Up..." : "Sign Up"}
           disabled={props.isPending}
         />
-
-        {props.isError && (
-          <CustomError
-            message={props.error?.response?.data.message}
-            class="self-center"
-          />
-        )}
 
         <SignupFormPolicy />
 
