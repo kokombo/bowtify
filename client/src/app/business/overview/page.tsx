@@ -1,3 +1,5 @@
+"use client";
+
 import { ColorLink } from "@/components/buttons";
 
 const Overview = () => {
