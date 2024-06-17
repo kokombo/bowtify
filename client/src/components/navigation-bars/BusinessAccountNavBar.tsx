@@ -4,7 +4,7 @@ import { AccountDropdown } from "../dropdowns";
 
 const BusinessAccountNavBar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 paddingX">
+    <nav className="flex items-center justify-between h-20 paddingX">
       <div />
 
       <div className="flex items-center gap-6">

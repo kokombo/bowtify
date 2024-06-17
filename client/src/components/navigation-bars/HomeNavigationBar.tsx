@@ -15,7 +15,7 @@ const HomeNavigationBar = () => {
   const { session, sessionLoading, isIndividualAccount } = useCurrentUser();
 
   return (
-    <nav className="flex items-center justify-between py-4 paddingX shadow-lg">
+    <nav className="flex items-center justify-between h-20 paddingX shadow-lg">
       <span className="flex items-center gap-6">
         <BowtifyLogo />
 
