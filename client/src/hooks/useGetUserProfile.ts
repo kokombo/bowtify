@@ -14,23 +14,26 @@ export const useGetUserProfile = () => {
   const getUserProfileRequest = async () => {
     const res = await axios.get(apiBaseUrl + "/user/getUserProfile", {
       headers: {
-        withCredentials: true,
         Authorization: `Bearer ${accessToken}`,
+        Accept: "application/json",
       },
+      withCredentials: true,
     });
 
     return res.data;
   };
 
-  const { data, isLoading } = useQuery<User, ErrorResponse>({
+  const { data, isLoading, isSuccess } = useQuery<User, ErrorResponse>({
     queryKey: ["getUserProfile"],
     queryFn: getUserProfileRequest,
     enabled: !!session,
   });
 
   useEffect(() => {
-    dispatch(setUserProfile(data));
-  }, [data, dispatch]);
+    if (isSuccess) {
+      dispatch(setUserProfile(data));
+    }
+  }, [data, dispatch, isSuccess]);
 
   return { isLoading };
 };
