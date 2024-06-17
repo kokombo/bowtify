@@ -1,6 +1,7 @@
 "use client";
 
 import { SigninForm } from "@/components/forms";
+import { OverlayTransparentLoader } from "@/components/loaders";
 import { authError } from "@/constants/data";
 import { useClearErrorMessage, useCurrentUser } from "@/hooks";
 import { FormikHelpers } from "formik";
@@ -49,6 +50,8 @@ const Login = () => {
 
   return (
     <main className="grid place-items-center py-20">
+      {loading && <OverlayTransparentLoader />}
+
       <SigninForm
         initialFormValues={initialFormValues}
         isLoading={loading}

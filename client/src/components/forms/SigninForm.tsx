@@ -4,6 +4,7 @@ import { signinValidationSchema } from "@/utilities/validationSchemas";
 import { FormButton } from "../buttons";
 import SigninFormActionBox from "../SigninFormActionBox";
 import CustomError from "../CustomError";
+import { SIGN_IN_FORM } from "@/constants/data";
 
 type Props = {
   initialFormValues: SigninFormType;
@@ -26,7 +27,7 @@ const SigninForm = (props: Props) => {
     >
       <Form className="flex flex-col gap-6">
         <h1 className="text-lg font-bold self-center text-black">
-          Sign in to your Bowtify Account
+          {SIGN_IN_FORM.heading}
         </h1>
 
         <TextField

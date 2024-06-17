@@ -1,10 +1,12 @@
 import { SignupForm } from "@/components/forms";
+import { OverlayTransparentLoader } from "@/components/loaders";
 import { apiBaseUrl } from "@/constants/data";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 type Props = {
   formLabel: string;
@@ -22,6 +24,7 @@ const SignupPage = (props: Props) => {
     accountType: props.accountType,
   };
 
+  const [signingIn, setSigningIn] = useState(false);
   const router = useRouter();
 
   const signupRequest = async (formData: SignupFormType) => {
@@ -43,21 +46,29 @@ const SignupPage = (props: Props) => {
     onsubmitProps: FormikHelpers<SignupFormType>
   ) => {
     await mutateAsync({ ...values }).then(async () => {
+      setSigningIn(true);
+
       await signIn("credentials", {
         email: values.email,
         password: values.password,
         redirect: false,
-      }).then((res) => {
-        if (res?.ok) {
-          router.push(props.callbackUrl);
-          onsubmitProps.resetForm();
-        }
-      });
+      })
+        .then((res) => {
+          if (res?.ok) {
+            router.push(props.callbackUrl);
+            onsubmitProps.resetForm();
+          }
+        })
+        .finally(() => {
+          setSigningIn(false);
+        });
     });
   };
 
   return (
     <main className="grid place-items-center py-14">
+      {(isPending || signingIn) && <OverlayTransparentLoader />}
+
       <SignupForm
         initialFormValues={initialFormValues}
         isError={isError}

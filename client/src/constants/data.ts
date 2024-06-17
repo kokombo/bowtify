@@ -10,6 +10,10 @@ export const SUBSCRIBE_TO_EMAIL = {
     "I want to get the most out of my expereince by receiving insider tips.",
 };
 
+export const SIGN_IN_FORM = {
+  heading: "Sign in to your Bowtify Account",
+};
+
 export const apiBaseUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1`;
 
 export const authError = "Something went wrong, please try again.";
