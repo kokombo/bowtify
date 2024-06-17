@@ -75,7 +75,10 @@ const SignupForm = (props: Props) => {
         />
 
         {props.isError && (
-          <CustomError message={props.error?.response?.data.message} />
+          <CustomError
+            message={props.error?.response?.data.message}
+            class="self-center"
+          />
         )}
 
         <SignupFormPolicy />

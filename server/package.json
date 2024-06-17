@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.ts",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "migrate": "npx prisma migrate dev --name init"
   },
   "keywords": [],
   "author": "",

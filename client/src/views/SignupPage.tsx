@@ -57,7 +57,7 @@ const SignupPage = (props: Props) => {
   };
 
   return (
-    <main className="grid place-items-center py-12">
+    <main className="grid place-items-center py-14">
       <SignupForm
         initialFormValues={initialFormValues}
         isError={isError}
