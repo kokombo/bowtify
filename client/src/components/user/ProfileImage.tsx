@@ -14,7 +14,7 @@ const ProfileImage = (props: Props) => {
   return (
     <div
       className={twMerge(
-        "bg-black text-white font-semibold rounded-full flex items-center justify-center",
+        "bg-black text-white font-semibold rounded-full flex items-center justify-center uppercases",
         props.fontSize,
         props.height,
         props.width,

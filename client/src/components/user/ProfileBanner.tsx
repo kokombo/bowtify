@@ -15,7 +15,7 @@ const ProfileBanner = () => {
         />
 
         <article className="flex flex-col gap-2">
-          <h4 className="text-2xl font-bold">
+          <h4 className="text-2xl font-bold capitalize">
             Welcome, {user?.first_name} {user?.last_name}
           </h4>
 
