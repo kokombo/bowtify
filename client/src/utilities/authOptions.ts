@@ -24,6 +24,7 @@ export const authOptions: NextAuthOptions = {
             {
               headers: {
                 "Content-Type": "application/json",
+                Accept: "application/json",
               },
             }
           )

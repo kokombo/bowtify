@@ -28,7 +28,12 @@ const SignupPage = (props: Props) => {
   const router = useRouter();
 
   const signupRequest = async (formData: SignupFormType) => {
-    const res = await axios.post(apiBaseUrl + "/auth/signup", formData);
+    const res = await axios.post(apiBaseUrl + "/auth/signup", formData, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
     return res.data;
   };
 
