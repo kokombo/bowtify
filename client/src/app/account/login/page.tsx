@@ -39,8 +39,8 @@ const Login = () => {
       if (res?.error) {
         setError(res.error || authError);
       }
-    } catch (error: any) {
-      return setError(error.message || authError);
+    } catch (error) {
+      return setError(authError);
     } finally {
       setLoading(false);
     }
