@@ -12,10 +12,9 @@ import {
   suggestedCourses,
 } from "../../dummy";
 import { HomeNavigationBar } from "@/components/navigation-bars";
-import { useCurrentUser, useGetUserProfile } from "@/hooks";
+import { useCurrentUser } from "@/hooks";
 
 const IndividualAuthenticatedHome = () => {
-  useGetUserProfile();
   const { user } = useCurrentUser();
 
   return (
