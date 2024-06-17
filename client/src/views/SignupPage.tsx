@@ -72,7 +72,7 @@ const SignupPage = (props: Props) => {
       <SignupForm
         initialFormValues={initialFormValues}
         isError={isError}
-        isPending={isPending}
+        isPending={isPending || signingIn}
         formLabel={props.formLabel}
         error={error}
         onClickSignup={signup}
