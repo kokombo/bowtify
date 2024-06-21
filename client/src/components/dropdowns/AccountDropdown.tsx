@@ -10,7 +10,7 @@ const AccountDropdown = () => {
   const { isBusinessAccount, isIndividualAccount } = useCurrentUser();
 
   return (
-    <Dropdown backdrop="transparent" radius="sm">
+    <Dropdown backdrop="transparent" radius="sm" shouldBlockScroll={false}>
       <DropdownTrigger>
         <span>
           <ProfileImage
