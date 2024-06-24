@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FooterLinks = () => {
   return (
-    <div className="grid grid-cols-3 gap-y-2 w-4/6">
+    <div className="grid grid-cols-3 gap-y-2 w-full lg:w-4/6">
       {footerLinks.map((link, index) => {
         return (
           <Link

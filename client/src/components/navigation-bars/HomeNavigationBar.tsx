@@ -16,26 +16,28 @@ const HomeNavigationBar = () => {
 
   return (
     <nav className="flex items-center justify-between h-20 paddingX shadow-lg">
-      <span className="flex items-center gap-6">
+      <span className="flex items-center lg:gap-6">
         <BowtifyLogo />
 
-        <Link href="/#" className="text-sm hover:text-purple">
+        <Link href="/#" className="text-sm hover:text-purple hidden lg:inline">
           Explore
         </Link>
       </span>
 
       <MainSearchBox />
 
-      <NavLinks />
+      <div className="hidden lg:inline">
+        <NavLinks />
+      </div>
 
       <Fragment>
         {sessionLoading ? (
           <div />
         ) : (
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 lg:gap-6">
             <Fragment>
               {!session || isIndividualAccount ? (
-                <Link href="">
+                <Link href="" className="hidden lg:inline-block">
                   <MyIcon icon={FaShoppingCart} />
                 </Link>
               ) : null}
@@ -44,11 +46,11 @@ const HomeNavigationBar = () => {
             <Fragment>
               {session ? (
                 <Fragment>
-                  <Link href="">
+                  <Link href="" className="hidden lg:inline-block">
                     <MyIcon icon={LuHeart} />
                   </Link>
 
-                  <Link href="">
+                  <Link href="" className="hidden lg:inline-block">
                     <MyIcon icon={CgBell} />
                   </Link>
 

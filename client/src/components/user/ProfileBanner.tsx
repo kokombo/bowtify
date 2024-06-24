@@ -5,13 +5,13 @@ const ProfileBanner = () => {
   const { firstName, lastName } = useCurrentUser();
 
   return (
-    <div className="paddingX my-12">
+    <div className="paddingX my-6 lg:my-12">
       <article className="flex items-center gap-4">
         <ProfileImage
-          height="h-20"
-          width="w-20"
+          height="h-16 lg:h-20"
+          width="w-16 lg:w-20"
           cursorEnabled={false}
-          fontSize="text-3xl"
+          fontSize="text-2xl lg:text-3xl"
         />
 
         <article className="flex flex-col gap-2">

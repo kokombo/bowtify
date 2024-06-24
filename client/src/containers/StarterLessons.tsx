@@ -16,19 +16,19 @@ const StarterLessons = (props: Props) => {
   const numberOfDataPerSlider = 3;
 
   return (
-    <section className="paddingX my-16">
-      <div className="flex items-center justify-between mb-8">
-        <h4 className="text-3xl font-bold">{props.heading}</h4>
+    <section className="paddingX my-8 lg:my-16">
+      <div className="flex items-center justify-between gap-3 mb-8">
+        <h4 className="text-2xl md:text-3xl font-bold">{props.heading}</h4>
 
         <Link
           href={props.linkHref}
-          className="text-pink-500 underline font-bold underline-offset-4"
+          className="text-pink-500 underline text-sm md:text-lg font-bold underline-offset-4"
         >
           {props.linkLabel}
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
         {props.data
           .slice(0 + interval, numberOfDataPerSlider + interval)
           .map((lesson) => {

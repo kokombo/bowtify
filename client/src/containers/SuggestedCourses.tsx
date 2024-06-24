@@ -13,10 +13,10 @@ const SuggestedCourses = (props: Props) => {
   const numberOfDataPerSlider = 5;
 
   return (
-    <section className="paddingX my-16">
-      <h2 className="mb-5 text-2xl font-bold">{props.heading}</h2>
+    <section className="paddingX my-8 lg:my-16">
+      <h2 className="mb-5 text-xl md:text-2xl font-bold">{props.heading}</h2>
 
-      <div className="grid grid-cols-5 gap-3 relative">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 gap-y-4 relative">
         {props.data
           ?.slice(0 + interval, numberOfDataPerSlider + interval)
           .map((course) => {

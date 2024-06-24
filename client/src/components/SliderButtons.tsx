@@ -14,7 +14,7 @@ type Props = {
 
 const SliderButtons = (props: Props) => {
   return (
-    <Fragment>
+    <div className="hidden lg:inline">
       <Fragment>
         {props.interval >= props.numberOfDataPerSlider && (
           <RoundedIconButton
@@ -43,7 +43,7 @@ const SliderButtons = (props: Props) => {
           />
         )}
       </Fragment>
-    </Fragment>
+    </div>
   );
 };
 

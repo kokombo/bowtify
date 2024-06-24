@@ -14,19 +14,19 @@ const SuggestedEvents = (props: Props) => {
   const numberOfDataPerSlider = 3;
 
   return (
-    <section className="paddingX my-16">
-      <div className="flex items-center justify-between mb-5">
-        <h4 className="text-2xl font-bold">{props.heading}</h4>
+    <section className="paddingX my-8 lg:my-16">
+      <div className="flex items-center justify-between gap-3 mb-5">
+        <h4 className="text-xl md:text-2xl font-bold">{props.heading}</h4>
 
         <Link
           href=""
-          className="text-pink-500 underline font-bold underline-offset-4"
+          className="text-pink-500 underline text-sm md:text-base font-bold underline-offset-4"
         >
           More Events
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
         {props.data
           .slice(0 + interval, numberOfDataPerSlider + interval)
           .map((event) => (
