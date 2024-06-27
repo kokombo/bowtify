@@ -24,7 +24,7 @@ const SliderButtons = (props: Props) => {
               )
             }
             icon={GrPrevious}
-            classes={twMerge(props.prevButtonClass, "-left-4 ")}
+            classes={twMerge(props.prevButtonClass, "-left-4 absolute")}
           />
         )}
       </Fragment>
@@ -39,7 +39,7 @@ const SliderButtons = (props: Props) => {
               )
             }
             icon={GrNext}
-            classes={twMerge(props.nextButtonClass, "-right-4 ")}
+            classes={twMerge(props.nextButtonClass, "-right-4 absolute")}
           />
         )}
       </Fragment>

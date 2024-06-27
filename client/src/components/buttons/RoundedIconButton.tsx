@@ -14,7 +14,7 @@ const RoundedIconButton = (props: Props) => {
       type="button"
       onClick={props.onClick}
       className={twMerge(
-        "absolute bg-black p-3 z-[1000px] rounded-full text-white",
+        " bg-black p-3 z-[1000px] rounded-full text-white",
         props.classes
       )}
     >
