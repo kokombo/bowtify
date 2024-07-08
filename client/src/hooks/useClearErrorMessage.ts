@@ -1,4 +1,5 @@
-import { useEffect, SetStateAction, Dispatch } from "react";
+import { useEffect } from "react";
+import type { SetStateAction, Dispatch } from "react";
 
 export const useClearErrorMessage = (
   setState: Dispatch<SetStateAction<string | undefined>>

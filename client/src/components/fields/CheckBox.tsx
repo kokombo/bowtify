@@ -1,5 +1,6 @@
 import { Checkbox } from "@nextui-org/react";
-import { Field, FieldProps } from "formik";
+import { Field } from "formik";
+import type { FieldProps } from "formik";
 
 type Props = {
   name: string;
@@ -13,7 +14,7 @@ const CheckBox = (props: Props) => {
       {({ field }: FieldProps) => {
         return (
           <span>
-            <label htmlFor={props.id}></label>
+            <label htmlFor={props.id} />
             <Checkbox
               defaultSelected
               {...field}

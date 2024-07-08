@@ -1,6 +1,6 @@
 import { useCurrentUser } from "@/hooks";
 import { useRouter } from "next/navigation";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 
 const RedirectAuthUser = ({
   children,
@@ -21,13 +21,9 @@ const RedirectAuthUser = ({
     }
   }, [sessionLoading, session, isBusinessAccount, isIndividualAccount, router]);
 
-  if (sessionLoading) {
-    return <div className="h-screen" />;
-  }
+  if (sessionLoading) return <div className="h-screen" />;
 
-  if (!session) {
-    return <Fragment>{children}</Fragment>;
-  }
+  if (!session) return children;
 
   return null;
 };

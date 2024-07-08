@@ -1,7 +1,7 @@
 import { useCurrentUser } from "@/hooks";
 import { IndividualAuthenticatedHome } from "@/views";
 import { useRouter } from "next/navigation";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 
 const RedirectUserToSegment = ({
   children,
@@ -16,15 +16,11 @@ const RedirectUserToSegment = ({
     if (!sessionLoading && session && isBusinessAccount) {
       router.push("/ba/dashboard");
     }
-  }, [sessionLoading, session, isBusinessAccount, isIndividualAccount, router]);
+  }, [sessionLoading, session, isBusinessAccount, router]);
 
-  if (sessionLoading) {
-    return <div className="h-screen" />;
-  }
+  if (sessionLoading) return <div className="h-screen" />;
 
-  if (!session) {
-    return <Fragment>{children}</Fragment>;
-  }
+  if (!session) return children;
 
   return isIndividualAccount ? <IndividualAuthenticatedHome /> : null;
 };

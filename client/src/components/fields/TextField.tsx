@@ -1,4 +1,5 @@
-import { Field, ErrorMessage, FieldProps } from "formik";
+import { Field, ErrorMessage } from "formik";
+import type { FieldProps } from "formik";
 
 type Props = {
   name: string;

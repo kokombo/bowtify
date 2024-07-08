@@ -15,14 +15,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>Online courses, Events listing</title>
-
-        <meta charSet="utf-8" />
-
-        <link rel="icon" href="/vercel.svg" type="image/svg" sizes="any" />
-      </head>
-
       <body className={inter.className}>
         <AllProviders>
           <LoadingNavBar />

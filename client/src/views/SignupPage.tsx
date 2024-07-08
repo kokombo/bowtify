@@ -3,8 +3,9 @@ import { OverlayTransparentLoader } from "@/components/loaders";
 import { apiBaseUrl } from "@/constants/data";
 import { useClearErrorMessage } from "@/hooks";
 import { useMutation } from "@tanstack/react-query";
-import axios, { AxiosError } from "axios";
-import { FormikHelpers } from "formik";
+import axios from "axios";
+import type { AxiosError } from "axios";
+import type { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -30,7 +31,7 @@ const SignupPage = (props: Props) => {
   const router = useRouter();
 
   const signupRequest = async (formData: SignupFormType) => {
-    const res = await axios.post(apiBaseUrl + "/auth/signup", formData, {
+    const res = await axios.post(`${apiBaseUrl}/auth/signup`, formData, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

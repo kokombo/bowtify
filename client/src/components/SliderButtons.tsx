@@ -1,4 +1,5 @@
-import { Dispatch, Fragment, SetStateAction } from "react";
+import { Fragment } from "react";
+import type { SetStateAction, Dispatch } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { RoundedIconButton } from "./buttons";
 import { twMerge } from "tailwind-merge";

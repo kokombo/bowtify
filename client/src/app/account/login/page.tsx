@@ -4,7 +4,7 @@ import { SigninForm } from "@/components/forms";
 import { OverlayTransparentLoader } from "@/components/loaders";
 import { authError } from "@/constants/data";
 import { useClearErrorMessage } from "@/hooks";
-import { FormikHelpers } from "formik";
+import type { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

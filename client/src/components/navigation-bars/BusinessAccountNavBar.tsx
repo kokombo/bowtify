@@ -8,7 +8,7 @@ const BusinessAccountNavBar = () => {
       <div />
 
       <div className="flex items-center gap-6">
-        <button>
+        <button type="button">
           <MyIcon icon={CgBell} />
         </button>
 

@@ -7,7 +7,7 @@ const FooterLinks = () => {
       {footerLinks.map((link, index) => {
         return (
           <Link
-            key={index}
+            key={`${index}-${link.label}`}
             href={link.href}
             className="text-sm hover:underline underline-offset-2"
           >

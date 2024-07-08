@@ -10,7 +10,8 @@ const StarterLessonImage = (props: Props) => {
       src={props.url}
       allow="picture-in-picture"
       className="bg-gray"
-    ></iframe>
+      title="lesson-iframe"
+    />
   );
 };
 

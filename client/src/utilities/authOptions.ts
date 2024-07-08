@@ -1,6 +1,6 @@
 import { apiBaseUrl } from "@/constants/data";
 import axios from "axios";
-import { NextAuthOptions, User } from "next-auth";
+import type { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
 
         return await axios
           .post(
-            apiBaseUrl + "/auth/signin",
+            `${apiBaseUrl}/auth/signin`,
             { email, password },
             {
               headers: {
@@ -33,9 +33,8 @@ export const authOptions: NextAuthOptions = {
 
             if (user) {
               return user;
-            } else {
-              return null;
             }
+            return null;
           })
           .catch((error) => {
             throw new Error(error?.response?.data?.message);

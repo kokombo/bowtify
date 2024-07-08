@@ -1,4 +1,4 @@
-import { StateType } from "@/redux-toolkit/store";
+import type { StateType } from "@/redux-toolkit/store";
 import { useSession } from "next-auth/react";
 import { useSelector } from "react-redux";
 

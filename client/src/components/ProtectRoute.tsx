@@ -1,5 +1,4 @@
 import { useSession } from "next-auth/react";
-import { Fragment } from "react";
 import { useRouter } from "next/navigation";
 
 const ProtectRoute = ({
@@ -19,7 +18,7 @@ const ProtectRoute = ({
     return <div className="h-screen" />;
   }
 
-  return <Fragment>{children}</Fragment>;
+  return children;
 };
 
 export default ProtectRoute;

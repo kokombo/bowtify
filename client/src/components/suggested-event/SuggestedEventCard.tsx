@@ -21,7 +21,7 @@ const SuggestedEventCard = (props: Props) => {
           <span className="flex flex-col gap-1">
             <div className="flex items-center gap-1">
               {props.event.tags.map((tag, index) => (
-                <EventTypeTag key={index} label={tag} />
+                <EventTypeTag key={`${index}-${tag}`} label={tag} />
               ))}
             </div>
 

@@ -5,9 +5,11 @@ export const formatDuration = (durationInSeconds: number) => {
 
   if (hrs > 0) {
     return `${String(hrs).padStart(2, "0")}:${String(mins).padStart(2, "0")}h`;
-  } else if (mins > 0) {
-    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}m`;
-  } else {
-    return `${String(secs).padStart(2, "0")}s`;
   }
+
+  if (mins > 0) {
+    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}m`;
+  }
+
+  return `${String(secs).padStart(2, "0")}s`;
 };

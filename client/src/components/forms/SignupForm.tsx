@@ -1,5 +1,6 @@
 import { CheckBox, PasswordField, TextField } from "../fields";
-import { Form, Formik, FormikHelpers } from "formik";
+import { Form, Formik } from "formik";
+import type { FormikHelpers } from "formik";
 import { signupValidationSchema } from "@/utilities/validationSchemas";
 import { FormButton } from "../buttons";
 import { SUBSCRIBE_TO_EMAIL } from "@/constants/data";

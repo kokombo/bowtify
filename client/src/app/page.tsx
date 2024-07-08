@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <RedirectUserToSegment>
-      <UnauthenticatedHome />;
+      <UnauthenticatedHome />
     </RedirectUserToSegment>
   );
 };
