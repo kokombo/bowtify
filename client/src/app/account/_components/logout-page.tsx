@@ -1,5 +1,6 @@
+"use client";
 import { LogoutHero, SuggestedCourses, SuggestedEvents } from "@/containers";
-import { events, suggestedCourses } from "../../dummy";
+import { events, suggestedCourses } from "../../../../dummy";
 import { SuccessLogout } from "@/components/messages";
 
 const LogoutPage = () => {

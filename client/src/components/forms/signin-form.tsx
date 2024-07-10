@@ -1,7 +1,7 @@
 import { PasswordField, TextField } from "../fields";
 import { Form, Formik } from "formik";
 import type { FormikHelpers } from "formik";
-import { signinValidationSchema } from "@/utilities/validationSchemas";
+import { signinValidationSchema } from "@/utilities/validation-schemas";
 import { FormButton } from "../buttons";
 import SigninFormActionBox from "../SigninFormActionBox";
 import CustomError from "../CustomError";

@@ -1,4 +1,4 @@
-import OverlayWhiteLoader from "./OverlayWhiteLoader";
-import OverlayTransparentLoader from "./OverlayTransparentLoader";
+import OverlayWhiteLoader from "./overlay-white-loader";
+import OverlayTransparentLoader from "./overlay-transparent-loader";
 
 export { OverlayWhiteLoader, OverlayTransparentLoader };

@@ -1,5 +1,5 @@
-import PasswordField from "./PasswordField";
-import TextField from "./TextField";
-import CheckBox from "./CheckBox";
+import PasswordField from "./password-field";
+import TextField from "./text-field";
+import CheckBox from "./check-box";
 
 export { PasswordField, TextField, CheckBox };

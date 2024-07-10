@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TextField from "./TextField";
+import TextField from "./text-field";
 import { BiHide, BiShow } from "react-icons/bi";
 
 const PasswordField = () => {

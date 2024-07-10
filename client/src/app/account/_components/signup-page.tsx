@@ -1,3 +1,4 @@
+"use client";
 import { SignupForm } from "@/components/forms";
 import { OverlayTransparentLoader } from "@/components/loaders";
 import { apiBaseUrl } from "@/constants/data";

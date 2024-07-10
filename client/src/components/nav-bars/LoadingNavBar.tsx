@@ -1,5 +1,6 @@
+"use client";
 import { Fragment } from "react";
-import { BowtifyLogo } from "../logos";
+import { BowtifyLogo } from "@/components/logos";
 import { useCurrentUser } from "@/hooks";
 
 const LoadingNavBar = () => {

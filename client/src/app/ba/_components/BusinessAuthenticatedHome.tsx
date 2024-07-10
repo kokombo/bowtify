@@ -1,4 +1,5 @@
-import { BusinessAccountNavBar } from "@/components/navigation-bars";
+"use client";
+import BusinessAccountNavBar from "@/components/nav-bars/BusinessAccountNavBar";
 
 const BusinessAuthenticatedHome = () => {
   return (

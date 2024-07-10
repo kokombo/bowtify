@@ -1,15 +1,10 @@
-"use client";
-
 import "../globals.css";
-import { useGetUserProfile } from "@/hooks";
-import { ProtectRoute } from "@/components";
+import { ProtectRoute } from "@/components/auth";
 
 export default function BusinessAccountLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useGetUserProfile();
-
   return <ProtectRoute>{children}</ProtectRoute>;
 }

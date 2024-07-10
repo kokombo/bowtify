@@ -1,3 +1,4 @@
+"use client";
 import { Copyright } from "@/components";
 import { BowtifyLogo } from "@/components/logos";
 import { FooterLinks } from "@/components/untitled-lists";

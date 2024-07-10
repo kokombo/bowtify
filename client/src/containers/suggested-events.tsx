@@ -1,3 +1,4 @@
+"use client";
 import { SliderButtons } from "@/components";
 import { SuggestedEventCard } from "@/components/suggested-event";
 import Link from "next/link";

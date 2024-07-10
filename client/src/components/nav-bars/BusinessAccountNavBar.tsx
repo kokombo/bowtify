@@ -1,6 +1,7 @@
+"use client";
 import { CgBell } from "react-icons/cg";
-import MyIcon from "../MyIcon";
-import { AccountDropdown } from "../dropdowns";
+import { MyIcon } from "@/components";
+import { AccountDropdown } from "@/components/dropdowns";
 
 const BusinessAccountNavBar = () => {
   return (

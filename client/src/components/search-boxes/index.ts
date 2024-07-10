@@ -1,3 +1,3 @@
-import MainSearchBox from "./MainSearchBox";
+import MainSearchBox from "./main-search-box";
 
 export { MainSearchBox };

@@ -1,7 +1,7 @@
-import BorderedLink from "./BorderedLink";
-import ColorLink from "./ColorLink";
-import FormButton from "./FormButton";
-import RoundedIconButton from "./RoundedIconButton";
-import Signout from "./Signout";
+import BorderedLink from "./bordered-link";
+import ColorLink from "./color-link";
+import FormButton from "./form-button";
+import RoundedIconButton from "./rounded-icon-button";
+import Signout from "./sign-out";
 
 export { BorderedLink, ColorLink, FormButton, RoundedIconButton, Signout };

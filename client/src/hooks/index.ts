@@ -1,11 +1,5 @@
-import { useClearErrorMessage } from "./useClearErrorMessage";
-import { useCurrentUser } from "./useCurrentUser";
-import { useGetUserProfile } from "./useGetUserProfile";
-import useScreenSize from "./useScreenSize";
+import { useClearErrorMessage } from "./use-clear-error-message";
+import { useCurrentUser } from "./use-current-user";
+import useScreenSize from "./use-screen-size";
 
-export {
-  useClearErrorMessage,
-  useCurrentUser,
-  useGetUserProfile,
-  useScreenSize,
-};
+export { useClearErrorMessage, useCurrentUser, useScreenSize };

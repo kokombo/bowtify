@@ -1,4 +1,5 @@
-import { HomeNavigationBar } from "@/components/navigation-bars";
+"use client";
+import HomeNavigationBar from "./nav-bars/HomeNavigationBar";
 import {
   UnauthenticatedHomeHero,
   SuggestedCourses,

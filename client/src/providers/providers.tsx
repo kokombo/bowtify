@@ -1,9 +1,10 @@
+"use client";
 import { NextUIProvider } from "@nextui-org/react";
-import NextAuthProvider from "./NextAuthProvider";
-import ReactQueryProvider from "./ReactQueryProvider";
-import ReduxToolkitProvider from "./ReduxToolkitProvider";
+import NextAuthProvider from "@/providers/next-auth-provider";
+import ReactQueryProvider from "@/providers/react-query-provider";
+import ReduxToolkitProvider from "@/providers/redux-toolkit-provider";
 
-const AllProviders = ({
+const Providers = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -19,4 +20,4 @@ const AllProviders = ({
   );
 };
 
-export default AllProviders;
+export default Providers;

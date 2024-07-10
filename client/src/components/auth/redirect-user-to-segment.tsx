@@ -1,5 +1,6 @@
+"use client";
 import { useCurrentUser } from "@/hooks";
-import { IndividualAuthenticatedHome } from "@/views";
+import IndividualAuthenticatedHome from "@/app/ia/_components/IndividualAuthenticatedHome";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 

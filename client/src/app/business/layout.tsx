@@ -1,17 +1,12 @@
-"use client";
-
-import { Fragment } from "react";
 import "../globals.css";
-import { HomeNavigationBar } from "@/components/navigation-bars";
-import { useGetUserProfile } from "@/hooks";
+import { Fragment } from "react";
+import { HomeNavigationBar } from "@/components/nav-bars";
 
-export default function BusinessAccountOverviewLayout({
+export default async function BusinessAccountOverviewLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useGetUserProfile();
-
   return (
     <Fragment>
       <HomeNavigationBar />

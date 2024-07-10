@@ -1,3 +1,3 @@
-import AllProviders from "./AllProviders";
+import Providers from "./providers";
 
-export { AllProviders };
+export { Providers };

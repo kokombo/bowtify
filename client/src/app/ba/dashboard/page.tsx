@@ -1,6 +1,4 @@
-"use client";
-
-import { BusinessAuthenticatedHome } from "@/views";
+import BusinessAuthenticatedHome from "../_components/BusinessAuthenticatedHome";
 
 const BusinessDashboard = () => {
   return <BusinessAuthenticatedHome />;

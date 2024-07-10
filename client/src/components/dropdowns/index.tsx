@@ -1,3 +1,3 @@
-import AccountDropdown from "./AccountDropdown";
+import AccountDropdown from "./account-dropdown";
 
 export { AccountDropdown };

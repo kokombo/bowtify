@@ -1,7 +1,5 @@
-"use client";
-
-import { RedirectAuthUser } from "@/components";
-import { SignupPage } from "@/views";
+import { RedirectAuthUser } from "@/components/auth";
+import SignupPage from "@/app/account/_components/signup-page";
 
 const BusinessAccountSignupPage = () => {
   return (

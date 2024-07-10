@@ -1,3 +1,4 @@
+"use client";
 import { SliderButtons } from "@/components";
 import { SuggestedCourseCard } from "@/components/suggested-course";
 import { useState } from "react";

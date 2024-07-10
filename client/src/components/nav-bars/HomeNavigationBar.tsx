@@ -1,15 +1,16 @@
+"use client";
 import Link from "next/link";
-import { BowtifyLogo } from "../logos";
-import { MainSearchBox } from "../search-boxes";
-import { BorderedLink, ColorLink } from "../buttons";
+import { BowtifyLogo } from "@/components/logos";
+import { MainSearchBox } from "@/components/search-boxes";
+import { BorderedLink, ColorLink } from "@/components/buttons";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCurrentUser } from "@/hooks";
 import { Fragment } from "react";
 import { LuHeart } from "react-icons/lu";
 import { CgBell } from "react-icons/cg";
-import MyIcon from "../MyIcon";
-import { AccountDropdown } from "../dropdowns";
-import { NavLinks } from "../untitled-lists";
+import { MyIcon } from "@/components";
+import { AccountDropdown } from "@/components/dropdowns";
+import { NavLinks } from "@/components/untitled-lists";
 
 const HomeNavigationBar = () => {
   const { session, sessionLoading, isIndividualAccount } = useCurrentUser();

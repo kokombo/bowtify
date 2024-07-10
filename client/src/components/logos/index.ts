@@ -1,3 +1,3 @@
-import BowtifyLogo from "./BowtifyLogo";
+import BowtifyLogo from "./bowtify-logo";
 
 export { BowtifyLogo };

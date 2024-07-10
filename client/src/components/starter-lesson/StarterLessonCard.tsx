@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CourseTitle from "./CourseTitle";
+import CourseTitle from "./course-title";
 import LessonTitle from "./LessonTitle";
 import StarterLessonImage from "./StarterLessonImage";
 import Duration from "../Duration";

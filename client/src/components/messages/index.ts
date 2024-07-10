@@ -1,3 +1,3 @@
-import SuccessLogout from "./SuccessLogout";
+import SuccessLogout from "./success-logout";
 
 export { SuccessLogout };

@@ -1,12 +1,16 @@
-"use client";
-
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { AllProviders } from "@/providers";
+import LoadingNavBar from "@/components/nav-bars/LoadingNavBar";
 import { Footer } from "@/containers";
-import { LoadingNavBar } from "@/components/navigation-bars";
+import { Providers } from "@/providers";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["greek"] });
+
+export const metadata: Metadata = {
+  title: "Bowtiy",
+  description: "Discover courses and events on Bowtify",
+};
 
 export default function RootLayout({
   children,
@@ -16,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AllProviders>
+        <Providers>
           <LoadingNavBar />
           <main className="min-h-screen">{children}</main>
           <Footer />
-        </AllProviders>
+        </Providers>
       </body>
     </html>
   );

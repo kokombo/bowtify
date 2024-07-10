@@ -1,3 +1,4 @@
+"use client";
 import { StarterLessonCard } from "@/components/starter-lesson";
 import Link from "next/link";
 import { useState } from "react";

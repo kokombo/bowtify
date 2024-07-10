@@ -1,12 +1,7 @@
-"use client";
-
-import { RedirectUserToSegment } from "@/components";
-import { useGetUserProfile } from "@/hooks";
-import { UnauthenticatedHome } from "@/views";
+import UnauthenticatedHome from "@/components/unauthenticated-home";
+import { RedirectUserToSegment } from "@/components/auth";
 
 const Home = () => {
-  useGetUserProfile();
-
   return (
     <RedirectUserToSegment>
       <UnauthenticatedHome />
