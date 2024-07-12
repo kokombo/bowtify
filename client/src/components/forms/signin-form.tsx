@@ -3,8 +3,8 @@ import { Form, Formik } from "formik";
 import type { FormikHelpers } from "formik";
 import { signinValidationSchema } from "@/utilities/validation-schemas";
 import { FormButton } from "../buttons";
-import SigninFormActionBox from "../SigninFormActionBox";
-import CustomError from "../CustomError";
+import SigninFormActionBox from "../signin-form-action-box";
+import CustomError from "../custom-error";
 import { SIGN_IN_FORM } from "@/constants/data";
 
 type Props = {

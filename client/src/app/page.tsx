@@ -1,11 +1,26 @@
+import type { Metadata } from "next";
 import UnauthenticatedHome from "@/components/unauthenticated-home";
-import { RedirectUserToSegment } from "@/components/auth";
+import IndividualAuthenticatedHome from "./ia/_components/IndividualAuthenticatedHome";
+import { getCurrentServerSession } from "@/helpers/data";
 
-const Home = () => {
-  return (
-    <RedirectUserToSegment>
-      <UnauthenticatedHome />
-    </RedirectUserToSegment>
+export const metadata: Metadata = {
+  title: "Bowtify",
+  description: "Discover courses and events on Bowtify",
+};
+
+const Home = async () => {
+  const { session, isIndividualAccount } = await getCurrentServerSession();
+
+  return session ? (
+    <IndividualAuthenticatedHome
+      session={session}
+      isIndividualAccount={isIndividualAccount}
+    />
+  ) : (
+    <UnauthenticatedHome
+      session={session}
+      isIndividualAccount={isIndividualAccount}
+    />
   );
 };
 

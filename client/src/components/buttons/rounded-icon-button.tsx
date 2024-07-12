@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import MyIcon from "../MyIcon";
+import MyIcon from "../my-icon";
 import { twMerge } from "tailwind-merge";
 
 type Props = {

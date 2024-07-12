@@ -24,7 +24,6 @@ const LoginPage = () => {
   ) => {
     try {
       setLoading(true);
-
       const res = await signIn("credentials", {
         ...values,
         redirect: false,

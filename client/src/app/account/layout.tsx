@@ -1,16 +1,22 @@
-import "../globals.css";
+import "@/app/globals.css";
 import { HomeNavigationBar } from "@/components/nav-bars";
-import { RedirectAuthUser } from "@/components/auth";
+import { getCurrentServerSession } from "@/helpers/data";
+import { Fragment } from "react";
 
-export default function AuthOperationsLayout({
+export default async function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { session, isIndividualAccount } = await getCurrentServerSession();
+
   return (
-    <RedirectAuthUser>
-      <HomeNavigationBar />
+    <Fragment>
+      <HomeNavigationBar
+        session={session}
+        isIndividualAccount={isIndividualAccount}
+      />
       {children}
-    </RedirectAuthUser>
+    </Fragment>
   );
 }

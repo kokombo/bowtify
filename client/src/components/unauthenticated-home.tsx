@@ -1,16 +1,25 @@
 "use client";
-import HomeNavigationBar from "./nav-bars/HomeNavigationBar";
+import HomeNavigationBar from "./nav-bars/home-navigation-navbar";
 import {
   UnauthenticatedHomeHero,
   SuggestedCourses,
   SuggestedEvents,
 } from "@/containers";
 import { events, suggestedCourses } from "../../dummy";
+import type { Session } from "next-auth";
 
-const UnauthenticatedHome = () => {
+type Props = {
+  session: Session | null;
+  isIndividualAccount: boolean;
+};
+
+const UnauthenticatedHome = ({ session, isIndividualAccount }: Props) => {
   return (
     <main>
-      <HomeNavigationBar />
+      <HomeNavigationBar
+        session={session}
+        isIndividualAccount={isIndividualAccount}
+      />
 
       <UnauthenticatedHomeHero />
 

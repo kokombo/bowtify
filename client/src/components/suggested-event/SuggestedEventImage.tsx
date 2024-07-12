@@ -7,7 +7,7 @@ type Props = {
 
 const SuggestedEventImage = (props: Props) => {
   return (
-    <div className="relative w-2/6 h-full bg-gray">
+    <div className="block relative w-2/6 h-full bg-gray">
       <Image
         src={props.image}
         alt={props.alt}

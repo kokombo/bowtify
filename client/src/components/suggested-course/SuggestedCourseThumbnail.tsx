@@ -7,7 +7,7 @@ type Props = {
 
 const SuggestedCourseThumbnail = (props: Props) => {
   return (
-    <div className="relative h-[160px] w-full mb-2 border-1 border-grey">
+    <div className="block relative h-[160px] mb-2 border-1 border-grey">
       <Image
         src={props.thumbNail}
         alt={props.title}

@@ -2,8 +2,11 @@
 import { CgBell } from "react-icons/cg";
 import { MyIcon } from "@/components";
 import { AccountDropdown } from "@/components/dropdowns";
+import { useCurrentUser } from "@/hooks";
 
 const BusinessAccountNavBar = () => {
+  const { session } = useCurrentUser();
+
   return (
     <nav className="flex items-center justify-between h-20 paddingX">
       <div />
@@ -13,7 +16,7 @@ const BusinessAccountNavBar = () => {
           <MyIcon icon={CgBell} />
         </button>
 
-        <AccountDropdown />
+        <AccountDropdown session={session} />
       </div>
     </nav>
   );

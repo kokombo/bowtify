@@ -1,4 +1,4 @@
-import ProfileImage from "./ProfileImage";
-import ProfileBanner from "./ProfileBanner";
+import ProfileImage from "./profile-image";
+import ProfileBanner from "./profile-banner";
 
 export { ProfileImage, ProfileBanner };

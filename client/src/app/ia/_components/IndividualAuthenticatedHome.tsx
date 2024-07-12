@@ -1,4 +1,3 @@
-"use client";
 import { ProfileBanner } from "@/components/user";
 import {
   BillBoard,
@@ -13,18 +12,27 @@ import {
   suggestedCourses,
 } from "../../../../dummy";
 import { HomeNavigationBar } from "@/components/nav-bars";
-import { useCurrentUser } from "@/hooks";
+import type { Session } from "next-auth";
 
-const IndividualAuthenticatedHome = () => {
-  const { firstName } = useCurrentUser();
+type Props = {
+  session: Session | null;
+  isIndividualAccount: boolean;
+};
 
+const IndividualAuthenticatedHome = ({
+  session,
+  isIndividualAccount,
+}: Props) => {
   return (
     <main>
-      <HomeNavigationBar />
-      <ProfileBanner />
+      <HomeNavigationBar
+        isIndividualAccount={isIndividualAccount}
+        session={session}
+      />
+      <ProfileBanner session={session} />
       <BillBoard />
       <StarterLessons
-        heading={` Let's start learning, ${firstName}`}
+        heading={` Let's start learning, ${session?.user.firstName}`}
         linkHref=""
         linkLabel="My Learning"
         data={starterLessons}

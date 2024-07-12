@@ -1,8 +1,8 @@
 import { apiBaseUrl } from "@/constants/data";
-import { useServerSession } from "../../hooks/use-server-session";
+import { getCurrentServerSession } from "./get-current-server-session";
 
 export const useGetUserProfile = async (): Promise<User | ErrorResponse> => {
-  const { session } = await useServerSession();
+  const { session } = await getCurrentServerSession();
 
   const res = await fetch(`${apiBaseUrl}/user/getUserProfile`, {
     method: "GET",

@@ -1,4 +1,5 @@
-import { useCurrentUser } from "@/hooks";
+"use client";
+import type { Session } from "next-auth";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
@@ -6,11 +7,10 @@ type Props = {
   height: string;
   width: string;
   cursorEnabled?: boolean;
+  session: Session | null;
 };
 
 const ProfileImage = (props: Props) => {
-  const { firstName, lastName } = useCurrentUser();
-
   return (
     <div
       className={twMerge(
@@ -21,8 +21,8 @@ const ProfileImage = (props: Props) => {
         props.cursorEnabled && "cursor-pointer"
       )}
     >
-      {firstName?.slice(0, 1)}
-      {lastName?.slice(0, 1)}
+      {props.session?.user?.firstName?.slice(0, 1)}
+      {props.session?.user?.lastName?.slice(0, 1)}
     </div>
   );
 };

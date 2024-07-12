@@ -1,4 +1,4 @@
-import MyIcon from "../MyIcon";
+import MyIcon from "../my-icon";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 const SuccessLogout = () => {

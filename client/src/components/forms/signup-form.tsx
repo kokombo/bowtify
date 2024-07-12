@@ -4,10 +4,10 @@ import type { FormikHelpers } from "formik";
 import { signupValidationSchema } from "@/utilities/validation-schemas";
 import { FormButton } from "../buttons";
 import { SUBSCRIBE_TO_EMAIL } from "@/constants/data";
-import SignupFormPolicy from "../SignupFormPolicy";
+import SignupFormPolicy from "../signup-form-policy";
 import Divider from "../Divider";
-import SignupFormActionBox from "../SignupFormActionBox";
-import CustomError from "../CustomError";
+import SignupFormActionBox from "../signup-form-action-box";
+import CustomError from "../custom-error";
 
 type Props = {
   initialFormValues: SignupFormType;
