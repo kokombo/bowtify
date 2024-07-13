@@ -1,5 +1,5 @@
 import { useClearErrorMessage } from "./use-clear-error-message";
-import { useCurrentUser } from "./use-current-user";
+import { useCurrentClientSession } from "./use-current-client-session";
 import useScreenSize from "./use-screen-size";
 
-export { useClearErrorMessage, useCurrentUser, useScreenSize };
+export { useClearErrorMessage, useCurrentClientSession, useScreenSize };

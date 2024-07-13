@@ -9,18 +9,12 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
-  const { session, isIndividualAccount } = await getCurrentServerSession();
+  const { session } = await getCurrentServerSession();
 
   return session ? (
-    <IndividualAuthenticatedHome
-      session={session}
-      isIndividualAccount={isIndividualAccount}
-    />
+    <IndividualAuthenticatedHome session={session} />
   ) : (
-    <UnauthenticatedHome
-      session={session}
-      isIndividualAccount={isIndividualAccount}
-    />
+    <UnauthenticatedHome session={session} />
   );
 };
 

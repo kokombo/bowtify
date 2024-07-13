@@ -13,10 +13,9 @@ import type { Session } from "next-auth";
 
 type Props = {
   session: Session | null;
-  isIndividualAccount: boolean;
 };
 
-const HomeNavigationBar = ({ session, isIndividualAccount }: Props) => {
+const HomeNavigationBar = ({ session }: Props) => {
   return (
     <nav className="flex items-center justify-between h-20 paddingX shadow-lg">
       <span className="flex items-center lg:gap-6">
@@ -36,7 +35,7 @@ const HomeNavigationBar = ({ session, isIndividualAccount }: Props) => {
       <Fragment>
         <div className="flex items-center gap-3 lg:gap-6">
           <Fragment>
-            {!session || isIndividualAccount ? (
+            {!session || session?.user.accessToken === "individual" ? (
               <Link href="" className="hidden lg:inline-block">
                 <MyIcon icon={FaShoppingCart} />
               </Link>

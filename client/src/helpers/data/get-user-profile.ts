@@ -1,13 +1,13 @@
 import { apiBaseUrl } from "@/constants/data";
 import { getCurrentServerSession } from "./get-current-server-session";
 
-export const useGetUserProfile = async (): Promise<User | ErrorResponse> => {
-  const { session } = await getCurrentServerSession();
+export const getUserProfile = async (): Promise<User | ErrorResponse> => {
+  const { accessToken } = await getCurrentServerSession();
 
   const res = await fetch(`${apiBaseUrl}/user/getUserProfile`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${session?.user?.accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
     },
     credentials: "include",
@@ -20,5 +20,6 @@ export const useGetUserProfile = async (): Promise<User | ErrorResponse> => {
   }
 
   const user: User = await res.json();
+
   return user;
 };

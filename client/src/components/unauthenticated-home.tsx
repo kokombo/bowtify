@@ -10,16 +10,12 @@ import type { Session } from "next-auth";
 
 type Props = {
   session: Session | null;
-  isIndividualAccount: boolean;
 };
 
-const UnauthenticatedHome = ({ session, isIndividualAccount }: Props) => {
+const UnauthenticatedHome = ({ session }: Props) => {
   return (
     <main>
-      <HomeNavigationBar
-        session={session}
-        isIndividualAccount={isIndividualAccount}
-      />
+      <HomeNavigationBar session={session} />
 
       <UnauthenticatedHomeHero />
 

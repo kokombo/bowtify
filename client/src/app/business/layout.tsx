@@ -8,14 +8,11 @@ export default async function BusinessAccountOverviewLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { session, isIndividualAccount } = await getCurrentServerSession();
+  const { session } = await getCurrentServerSession();
 
   return (
     <Fragment>
-      <HomeNavigationBar
-        session={session}
-        isIndividualAccount={isIndividualAccount}
-      />
+      <HomeNavigationBar session={session} />
       {children}
     </Fragment>
   );

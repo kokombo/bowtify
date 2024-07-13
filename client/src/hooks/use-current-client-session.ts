@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 
-export const useCurrentUser = () => {
+export const useCurrentClientSession = () => {
   const { data: session, status } = useSession();
 
   const accessToken = session?.user.accessToken;
