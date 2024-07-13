@@ -40,11 +40,6 @@ export const middleware = async (req: NextRequest) => {
   }
 
   if (!isLoggedIn && !isPublicRoute) {
-    let callbackUrl = nextUrl.pathname;
-    if (nextUrl.search) {
-      callbackUrl += nextUrl.search;
-    }
-
     return Response.redirect(new URL(loginRedirect, nextUrl));
   }
 
