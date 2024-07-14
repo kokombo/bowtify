@@ -19,7 +19,7 @@ const CheckBox = (props: Props) => {
               defaultSelected
               {...field}
               radius="none"
-              className="w-[400px] text-xs"
+              className="w-[400px] max-w-[90vw] text-xs"
             >
               <span className="text-sm  font-medium">{props.label}</span>
             </Checkbox>

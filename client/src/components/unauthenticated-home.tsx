@@ -16,14 +16,11 @@ const UnauthenticatedHome = ({ session }: Props) => {
   return (
     <main>
       <HomeNavigationBar session={session} />
-
       <UnauthenticatedHomeHero />
-
       <SuggestedCourses
-        heading="Learners are viewing"
+        headingPrefix="Learners are viewing"
         data={suggestedCourses}
       />
-
       <SuggestedEvents heading="Discover latest events" data={events} />
     </main>
   );

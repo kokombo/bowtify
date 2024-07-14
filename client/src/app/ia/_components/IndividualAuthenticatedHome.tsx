@@ -1,3 +1,4 @@
+"use client";
 import { ProfileBanner } from "@/components/user";
 import {
   BillBoard,
@@ -31,7 +32,8 @@ const IndividualAuthenticatedHome = ({ session }: Props) => {
         data={starterLessons}
       />
       <SuggestedCourses
-        heading="Because you searched for Front-end Development"
+        headingPrefix="Because you searched for"
+        category="Front-end Development"
         data={suggestedCourses}
       />
       <SuggestedEvents
@@ -39,19 +41,25 @@ const IndividualAuthenticatedHome = ({ session }: Props) => {
         data={events}
       />
       <SuggestedCourses
-        heading='Because you viewed "Data Science"'
+        headingPrefix="Because you viewed"
+        category='"Data Science"'
         data={suggestedCourses}
       />
       <SuggestedCourses
-        heading="Learners are viewings"
+        headingPrefix="Learners are viewings"
         data={suggestedCourses}
       />
       <SuggestedCourses
-        heading="Top courses in Backend Development"
+        headingPrefix="Top courses in"
+        category="Backend Development"
         data={suggestedCourses}
       />
       <SuggestedEvents heading="Newest events in town" data={events} />
-      <SuggestedCourses heading="Newest Courses on Node.js" data={newCourses} />
+      <SuggestedCourses
+        headingPrefix="Newest Courses on"
+        category="Node.js"
+        data={newCourses}
+      />
     </main>
   );
 };

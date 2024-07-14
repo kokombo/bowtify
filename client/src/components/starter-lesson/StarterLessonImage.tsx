@@ -11,6 +11,7 @@ const StarterLessonImage = (props: Props) => {
       allow="picture-in-picture"
       className="bg-gray"
       title="lesson-iframe"
+      allowFullScreen
     />
   );
 };

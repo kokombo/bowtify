@@ -6,7 +6,7 @@ const PasswordField = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="relative w-fit">
+    <div className="relative">
       <TextField
         name="password"
         id="password"

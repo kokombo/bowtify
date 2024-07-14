@@ -26,7 +26,9 @@ const HomeNavigationBar = ({ session }: Props) => {
         </Link>
       </span>
 
-      <MainSearchBox />
+      <div className="hidden lg:inline">
+        <MainSearchBox />
+      </div>
 
       <div className="hidden lg:inline">
         <NavLinks />

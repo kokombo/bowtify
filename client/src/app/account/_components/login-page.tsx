@@ -47,7 +47,7 @@ const LoginPage = () => {
   useClearErrorMessage(setError);
 
   return (
-    <main className="grid place-items-center py-20">
+    <main className="flex items-center justify-center py-14 lg:py-20 px-5">
       {loading && <OverlayTransparentLoader />}
 
       <SigninForm

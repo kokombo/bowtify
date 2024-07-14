@@ -11,11 +11,10 @@ type Props = {
 
 const SuggestedEvents = (props: Props) => {
   const [interval, setInterval] = useState<number>(0);
-
   const numberOfDataPerSlider = 3;
 
   return (
-    <section className="paddingX my-8 lg:my-16">
+    <section className="paddingX my-12 lg:my-16">
       <div className="flex items-center justify-between gap-3 mb-5">
         <h4 className="text-xl md:text-2xl font-bold">{props.heading}</h4>
 
@@ -27,7 +26,7 @@ const SuggestedEvents = (props: Props) => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-0 gap-4 relative">
         {props.data
           .slice(0 + interval, numberOfDataPerSlider + interval)
           .map((event) => (

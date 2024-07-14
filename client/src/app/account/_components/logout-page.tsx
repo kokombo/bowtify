@@ -7,14 +7,11 @@ const LogoutPage = () => {
   return (
     <main>
       <SuccessLogout />
-
       <LogoutHero />
-
       <SuggestedCourses
-        heading="Learners are viewing"
+        headingPrefix="Learners are viewing"
         data={suggestedCourses}
       />
-
       <SuggestedEvents heading="Discover latest events" data={events} />
     </main>
   );

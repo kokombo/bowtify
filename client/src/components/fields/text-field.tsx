@@ -28,7 +28,7 @@ const TextField = (props: Props) => {
 
               <input
                 {...field}
-                className="w-[400px] px-3 pt-6 pb-2 text-sm lg:text-base outline-none text-black"
+                className="w-[400px] max-w-[90vw] px-3 pt-6 pb-2 text-sm lg:text-base outline-none text-black"
                 type={props.type}
                 autoComplete={props.autoComplete}
                 disabled={props.disabled}
