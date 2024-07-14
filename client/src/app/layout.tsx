@@ -1,10 +1,17 @@
-"use client";
+// "use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Footer } from "@/containers";
 import { Providers } from "@/providers";
+import type { Metadata } from "next";
+// import { Providers } from "@/app/imports";
 
 const inter = Inter({ subsets: ["greek"] });
+
+export const metadata: Metadata = {
+  title: "Bowtify",
+  description: "Discover courses and events on Bowtify",
+};
 
 export default function RootLayout({
   children,
