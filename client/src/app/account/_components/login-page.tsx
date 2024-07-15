@@ -31,6 +31,7 @@ const LoginPage = () => {
 
       if (res?.ok) {
         router.push("/");
+        router.refresh();
         onsubmitProps.resetForm();
       }
 
