@@ -5,7 +5,7 @@ import {
   loginRedirect,
   businessRedirectUrl,
   isBusinessAccount,
-  apiAuthPrefix,
+  isIndividualAccount,
 } from "../route";
 import { getToken } from "next-auth/jwt";
 
@@ -16,34 +16,42 @@ export const middleware = async (req: NextRequest) => {
   });
 
   const { nextUrl } = req;
-  const isLoggedIn = !!token;
-
-  const isApiRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+  const isAuthenticated = !!token;
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
+  const isBusinessRoute = nextUrl.pathname.startsWith("/ba");
+  const isIndividualRoute = nextUrl.pathname.startsWith("/ia");
 
-  if (isApiRoute) {
-    return null;
-  }
+  if (isAuthenticated) {
+    if (isAuthRoute) {
+      if (token.accountType === isBusinessAccount) {
+        return NextResponse.redirect(new URL(businessRedirectUrl, nextUrl));
+      }
 
-  if (isAuthRoute) {
-    if (isLoggedIn) {
-      return NextResponse.redirect(new URL("/", nextUrl));
+      if (token.accountType === isIndividualAccount) {
+        return NextResponse.redirect(new URL("/", nextUrl));
+      }
     }
-    return null;
-  }
 
-  if (isLoggedIn && nextUrl.pathname === "/") {
-    if (token.accountType === isBusinessAccount) {
+    if (nextUrl.pathname === "/") {
+      if (token.accountType === isBusinessAccount) {
+        return NextResponse.redirect(new URL(businessRedirectUrl, nextUrl));
+      }
+    }
+
+    if (isIndividualRoute && token.accountType === isBusinessAccount) {
       return NextResponse.redirect(new URL(businessRedirectUrl, nextUrl));
     }
-  }
 
-  if (!isLoggedIn && !isPublicRoute) {
-    return Response.redirect(new URL(loginRedirect, nextUrl));
+    if (isBusinessRoute && token.accountType === isIndividualAccount) {
+      return NextResponse.redirect(new URL("/", nextUrl));
+    }
+  } else {
+    if (isPublicRoute || isAuthRoute) {
+      return null;
+    }
+    return NextResponse.redirect(new URL(loginRedirect, nextUrl));
   }
-
-  return null;
 };
 
 export const config = {

@@ -7,6 +7,7 @@ import type { FormikHelpers } from "formik";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { getSession } from "next-auth/react";
 
 const initialFormValues: SigninFormType = {
   email: "",
@@ -30,8 +31,10 @@ const LoginPage = () => {
       });
 
       if (res?.ok) {
-        router.push("/");
-        router.refresh();
+        const session = await getSession();
+        const callbackUrl =
+          session?.user.accountType === "business" ? "/ba/dashboard" : "/";
+        router.push(callbackUrl);
         onsubmitProps.resetForm();
       }
 

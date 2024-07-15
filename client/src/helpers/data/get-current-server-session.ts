@@ -1,8 +1,9 @@
 import { authOptions } from "@/utilities/auth-options";
 import { getServerSession } from "next-auth";
 import { cache } from "react";
+import { getSession } from "next-auth/react";
 
-export const getCurrentServerSession = cache(async () => {
+export const getCurrentServerSession = async () => {
   const session = await getServerSession(authOptions);
   const firstName = session?.user.firstName;
   const lastName = session?.user.lastName;
@@ -14,4 +15,4 @@ export const getCurrentServerSession = cache(async () => {
     lastName,
     accessToken,
   };
-});
+};
