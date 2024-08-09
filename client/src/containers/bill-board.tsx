@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BillBoard = () => {
   return (
-    <section className="block relative paddingX my-12 lg:my-16">
+    <section className="block relative paddingX mt-6 lg:mt-12">
       <div className="h-[350px] lg:h-[400px] bg-pink-700 w-full">
         <Image
           src={images.bowtifyhero1}
