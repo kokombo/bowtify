@@ -1,5 +1,5 @@
 import { useClearErrorMessage } from "./use-clear-error-message";
-import { useCurrentClientSession } from "./use-current-client-session";
 import useScreenSize from "./use-screen-size";
+import { useNumberOfDataPerSlider } from "./use-number-of-data-per-slider";
 
-export { useClearErrorMessage, useCurrentClientSession, useScreenSize };
+export { useClearErrorMessage, useScreenSize, useNumberOfDataPerSlider };

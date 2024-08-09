@@ -3,6 +3,7 @@ import { StarterLessonCard } from "@/components/starter-lesson";
 import Link from "next/link";
 import { useState } from "react";
 import { SliderButtons } from "@/components";
+import { useNumberOfDataPerSlider } from "@/hooks";
 
 type Props = {
   heading: string;
@@ -13,7 +14,7 @@ type Props = {
 
 const StarterLessons = (props: Props) => {
   const [interval, setInterval] = useState<number>(0);
-  const numberOfDataPerSlider = 3;
+  const numberOfDataPerSlider = useNumberOfDataPerSlider(4, 3);
 
   return (
     <section className="paddingX my-12 lg:my-16">

@@ -17,7 +17,7 @@ type Props = {
 
 const HomeNavigationBar = ({ session }: Props) => {
   return (
-    <nav className="flex items-center justify-between h-20 paddingX shadow-lg">
+    <nav className="flex items-center justify-between h-20 paddingX shadow-md">
       <span className="flex items-center lg:gap-6">
         <BowtifyLogo />
 

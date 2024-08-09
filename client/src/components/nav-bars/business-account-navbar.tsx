@@ -2,10 +2,10 @@
 import { CgBell } from "react-icons/cg";
 import { MyIcon } from "@/components";
 import { AccountDropdown } from "@/components/dropdowns";
-import { useCurrentClientSession } from "@/hooks";
+import { useSession } from "next-auth/react";
 
 const BusinessAccountNavBar = () => {
-  const { session } = useCurrentClientSession();
+  const { data: session } = useSession();
 
   return (
     <nav className="flex items-center justify-between h-20 paddingX">

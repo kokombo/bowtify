@@ -1,6 +1,7 @@
 "use client";
 import { SliderButtons } from "@/components";
 import { SuggestedEventCard } from "@/components/suggested-event";
+import { useNumberOfDataPerSlider } from "@/hooks";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,7 +12,7 @@ type Props = {
 
 const SuggestedEvents = (props: Props) => {
   const [interval, setInterval] = useState<number>(0);
-  const numberOfDataPerSlider = 3;
+  const numberOfDataPerSlider = useNumberOfDataPerSlider(4, 3);
 
   return (
     <section className="paddingX my-12 lg:my-16">
