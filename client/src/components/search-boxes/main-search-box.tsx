@@ -3,7 +3,7 @@ const MainSearchBox = () => {
     <input
       type="search"
       placeholder="Search anything..."
-      className="py-3 px-5 outline-none border-1 border-grey text-sm w-80"
+      className="py-3 px-5 outline-none bg-slate-50 border-1 border-black rounded-full text-sm w-96"
     />
   );
 };

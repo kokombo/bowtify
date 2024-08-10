@@ -1,4 +1,3 @@
-import "@/app/globals.css";
 import { HomeNavigationBar } from "@/components/nav-bars";
 import { getCurrentServerSession } from "@/helpers/data";
 import { Fragment } from "react";

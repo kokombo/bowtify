@@ -1,3 +1,5 @@
+import illustrations from "./illustrations";
+
 export const NAV_LINKS = [
   { href: "#", label: "Events" },
   { href: "#", label: "Courses" },
@@ -17,6 +19,49 @@ export const SIGN_IN_FORM = {
 export const apiBaseUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1`;
 
 export const authError = "Something went wrong, please try again.";
+
+export const CATEGORIES = [
+  {
+    label: "Design",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Development",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Marketing",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "IT and Software",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Business",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Photography",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Music",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+  {
+    label: "Personal Development",
+    illustration: illustrations.categorydevelopment,
+    href: "",
+  },
+];
 
 export const INDIVIDUAL_ACCOUNT_AUTHENTICATED_LINKS = [
   {

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import type { SetStateAction, Dispatch } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
-import { RoundedIconButton } from "./buttons";
+import { RoundIconButton } from "./buttons";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
@@ -18,14 +18,15 @@ const SliderButtons = (props: Props) => {
     <div className="hidden lg:inline">
       <Fragment>
         {props.interval >= props.numberOfDataPerSlider && (
-          <RoundedIconButton
+          <RoundIconButton
             onClick={() =>
               props.setInterval(
                 (interval) => interval - props.numberOfDataPerSlider
               )
             }
             icon={GrPrevious}
-            classes={twMerge(props.prevButtonClass, "-left-4 absolute")}
+            className={twMerge(props.prevButtonClass, "-left-4 absolute")}
+            ariaLabel="previous slide button"
           />
         )}
       </Fragment>
@@ -33,14 +34,15 @@ const SliderButtons = (props: Props) => {
       <Fragment>
         {props.interval <
           props.numberOfDataPerSlider * props.numberOfAdditionalSlides && (
-          <RoundedIconButton
+          <RoundIconButton
             onClick={() =>
               props.setInterval(
                 (interval) => interval + props.numberOfDataPerSlider
               )
             }
             icon={GrNext}
-            classes={twMerge(props.nextButtonClass, "-right-4 absolute")}
+            className={twMerge(props.nextButtonClass, "-right-4 absolute")}
+            ariaLabel="next slide button"
           />
         )}
       </Fragment>

@@ -17,7 +17,7 @@ const StarterLessons = (props: Props) => {
   const numberOfDataPerSlider = useNumberOfDataPerSlider(4, 3);
 
   return (
-    <section className="paddingX my-12 lg:my-16">
+    <section className="paddingX my-16">
       <div className="flex items-center justify-between lg:gap-3 mb-8">
         <h4 className="text-2xl md:text-3xl font-bold">{props.heading}</h4>
 

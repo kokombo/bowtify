@@ -15,7 +15,7 @@ const SuggestedEvents = (props: Props) => {
   const numberOfDataPerSlider = useNumberOfDataPerSlider(4, 3);
 
   return (
-    <section className="paddingX my-12 lg:my-16">
+    <section className="paddingX my-16">
       <div className="flex items-center justify-between gap-3 mb-5">
         <h4 className="text-xl md:text-2xl font-bold">{props.heading}</h4>
 

@@ -15,7 +15,7 @@ const config: Config = {
       backgroundImage: {},
 
       colors: {
-        black: "#414141",
+        black: "#2d2f31",
         fadedBlack: "#606060",
         gray: "#363D41",
         fadedGray: "#575D60",

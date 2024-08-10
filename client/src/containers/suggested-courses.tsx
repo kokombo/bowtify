@@ -15,7 +15,7 @@ const SuggestedCourses = (props: Props) => {
   const numberOfDataPerSlider = useNumberOfDataPerSlider(6, 5);
 
   return (
-    <section className="paddingX my-12 lg:my-16">
+    <section className="paddingX my-16">
       <h2 className="mb-5 text-xl md:text-2xl font-bold">
         {props.headingPrefix}{" "}
         <span className="text-pink-500">{props.category}</span>

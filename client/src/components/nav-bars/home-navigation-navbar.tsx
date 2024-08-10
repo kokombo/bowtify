@@ -60,7 +60,7 @@ const HomeNavigationBar = ({ session }: Props) => {
             <Fragment>
               <BorderedLink href="/account/login" label="Sign In" />
 
-              <ColorLink href="/account/signup" label="Sign Up" />
+              <ColorLink href="/account/signup" label="Sign Up" size="small" />
             </Fragment>
           )}
         </div>

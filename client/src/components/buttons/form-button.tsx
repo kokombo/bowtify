@@ -5,17 +5,17 @@ type Props = {
   disabled?: boolean;
 };
 
-const FormButton = (props: Props) => {
+const FormButton = ({ label, disabled }: Props) => {
   return (
     <button
       type="submit"
-      aria-disabled={props.disabled}
+      aria-disabled={disabled}
       className={twMerge(
         "py-5 w-full bg-purple text-white font-semibold text-base",
-        props.disabled && "cursor-not-allowed"
+        disabled && "cursor-not-allowed"
       )}
     >
-      {props.label}
+      {label}
     </button>
   );
 };
