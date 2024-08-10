@@ -6,7 +6,7 @@ import {
   businessRedirectUrl,
   isBusinessAccount,
   isIndividualAccount,
-} from "../route";
+} from "./route";
 import { getToken } from "next-auth/jwt";
 
 export const middleware = async (req: NextRequest) => {
@@ -33,10 +33,8 @@ export const middleware = async (req: NextRequest) => {
       }
     }
 
-    if (nextUrl.pathname === "/") {
-      if (token.accountType === isBusinessAccount) {
-        return NextResponse.redirect(new URL(businessRedirectUrl, nextUrl));
-      }
+    if (nextUrl.pathname === "/" && token.accountType === isBusinessAccount) {
+      return NextResponse.redirect(new URL(businessRedirectUrl, nextUrl));
     }
 
     if (isIndividualRoute && token.accountType === isBusinessAccount) {
