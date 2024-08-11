@@ -18,7 +18,7 @@ const Categories = () => {
                     alt={category.label}
                     height={300}
                     width={300}
-                    className="hover:scale-105 transition-all ease-in-out duration-500"
+                    // className="hover:scale-105 transition-all ease-in-out duration-500"
                   />
                 </div>
                 <figcaption className="font-bold lg:text-lg">

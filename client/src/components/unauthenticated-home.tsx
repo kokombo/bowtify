@@ -9,6 +9,7 @@ import { events, suggestedCourses } from "../../dummy";
 import type { Session } from "next-auth";
 import BecomeAnInstructor from "@/containers/become-an-instructor";
 import Categories from "@/containers/categories";
+import Partners from "@/containers/partners";
 
 type Props = {
   session: Session | null;
@@ -19,6 +20,7 @@ const UnauthenticatedHome = ({ session }: Props) => {
     <main>
       <HomeNavigationBar session={session} />
       <UnauthenticatedHomeHero />
+      <Partners />
       <SuggestedCourses
         headingPrefix="Learners are viewing"
         data={suggestedCourses}
