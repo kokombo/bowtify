@@ -2,7 +2,7 @@ import Link from "next/link";
 import CourseTitle from "./course-title";
 import LessonTitle from "./LessonTitle";
 import StarterLessonImage from "./StarterLessonImage";
-import Duration from "../duration";
+import Duration from "../Duration";
 
 type Props = {
   lesson: Lesson;
