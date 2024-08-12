@@ -44,7 +44,7 @@ export const CATEGORIES = [
   {
     label: "Business",
     illustration: illustrations.categorydevelopment,
-    href: "",
+    href: "/",
   },
   {
     label: "Photography",
