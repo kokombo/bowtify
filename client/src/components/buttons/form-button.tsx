@@ -1,11 +1,11 @@
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  label: string;
+  children: React.ReactNode;
   disabled?: boolean;
 };
 
-const FormButton = ({ label, disabled }: Props) => {
+const FormButton = ({ children, disabled }: Props) => {
   return (
     <button
       type="submit"
@@ -15,7 +15,7 @@ const FormButton = ({ label, disabled }: Props) => {
         disabled && "cursor-not-allowed"
       )}
     >
-      {label}
+      {children}
     </button>
   );
 };

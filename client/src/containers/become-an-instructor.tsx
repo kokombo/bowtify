@@ -22,11 +22,9 @@ const BecomeAnInstructor = () => {
           We provide the tools and skills to teach what you love.
         </p>
 
-        <ColorLink
-          label="Start teaching today"
-          href="/business/overview"
-          size="large"
-        />
+        <ColorLink href="/business/overview" size="large">
+          Start teaching today
+        </ColorLink>
       </article>
     </section>
   );

@@ -4,11 +4,11 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {
   href: string;
-  label: string;
+  children: React.ReactNode;
   size: "large" | "small";
 };
 
-const ColorLink = ({ href, label, size }: Props) => {
+const ColorLink = ({ href, children, size }: Props) => {
   let style = "";
 
   if (size === "large") {
@@ -22,7 +22,7 @@ const ColorLink = ({ href, label, size }: Props) => {
       href={href}
       className={twMerge("inline-block bg-black text-white", style)}
     >
-      {label}
+      {children}
     </Link>
   );
 };

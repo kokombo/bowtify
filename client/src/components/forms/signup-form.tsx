@@ -75,10 +75,9 @@ const SignupForm = (props: Props) => {
           <CustomError message={props.error} class="self-center" />
         )}
 
-        <FormButton
-          label={props.isPending ? "Signing Up..." : "Sign Up"}
-          disabled={props.isPending}
-        />
+        <FormButton disabled={props.isPending}>
+          {props.isPending ? "Signing Up..." : "Sign Up"}
+        </FormButton>
 
         <SignupFormPolicy />
 
