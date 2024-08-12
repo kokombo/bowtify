@@ -1,5 +1,5 @@
 import { HomeNavigationBar } from "@/components/nav-bars";
-import { getCurrentServerSession } from "@/helpers/data";
+import { getServerSession } from "@/helpers/data";
 import { Fragment } from "react";
 
 export default async function AuthLayout({
@@ -7,7 +7,7 @@ export default async function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { session } = await getCurrentServerSession();
+  const { session } = await getServerSession();
 
   return (
     <Fragment>

@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import { HomeNavigationBar } from "@/components/nav-bars";
-import { getCurrentServerSession } from "@/helpers/data";
+import { getServerSession } from "@/helpers/data";
 
 export default async function BusinessAccountOverviewLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { session } = await getCurrentServerSession();
+  const { session } = await getServerSession();
 
   return (
     <Fragment>

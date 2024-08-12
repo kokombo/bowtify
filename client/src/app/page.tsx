@@ -1,9 +1,9 @@
 import UnauthenticatedHome from "@/components/unauthenticated-home";
 import IndividualAuthenticatedHome from "./ia/_components/IndividualAuthenticatedHome";
-import { getCurrentServerSession } from "@/helpers/data";
+import { getServerSession } from "@/helpers/data";
 
 const Home = async () => {
-  const { session } = await getCurrentServerSession();
+  const { session } = await getServerSession();
 
   return session ? (
     <IndividualAuthenticatedHome session={session} />
