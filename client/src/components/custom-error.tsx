@@ -7,7 +7,7 @@ type Props = {
 
 const CustomError = (props: Props) => {
   return (
-    <div className={twMerge(props.class, "text-red-600 font-medium text-xs ")}>
+    <div className={twMerge(props.class, "text-red-600 font-medium text-sm ")}>
       {props.message}
     </div>
   );

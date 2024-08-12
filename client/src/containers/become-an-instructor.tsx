@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const BecomeAnInstructor = () => {
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-center gap-5 my-28 paddingX">
+    <section className="flex flex-col-reverse md:flex-row items-center justify-center gap-5 my-20 lg:my-28 paddingX">
       <Image
         src={images.instructor}
         alt="instructor"

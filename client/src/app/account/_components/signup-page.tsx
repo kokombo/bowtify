@@ -80,7 +80,7 @@ const SignupPage = (props: Props) => {
   useClearErrorMessage(setError);
 
   return (
-    <main className="flex items-center justify-center py-14 px-5">
+    <main className="grid place-items-center py-14">
       {(isPending || signingIn) && <OverlayTransparentLoader />}
 
       <SignupForm

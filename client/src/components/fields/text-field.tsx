@@ -18,17 +18,17 @@ const TextField = (props: Props) => {
       <Field name={props.name} id={props.id}>
         {({ field }: FieldProps) => {
           return (
-            <div className="relative border-black border-1">
+            <div className="relative border-black border-1 w-full">
               <label
                 htmlFor={props.id}
-                className="text-xs font-bold absolute left-3 top-1 text-black"
+                className="text-sm font-bold absolute left-3 top-1 text-black"
               >
                 {props.label}
               </label>
 
               <input
                 {...field}
-                className="w-[400px] max-w-[90vw] px-3 pt-6 pb-2 text-sm lg:text-base outline-none text-black"
+                className="w-[400px] max-w-[90vw] h-16 px-3 pt-6 pb-2 outline-none text-black"
                 type={props.type}
                 autoComplete={props.autoComplete}
                 disabled={props.disabled}

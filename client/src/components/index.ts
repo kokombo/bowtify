@@ -1,7 +1,7 @@
-import Divider from "./Divider";
+import Divider from "./divider";
 import MyIcon from "./my-icon";
-import Duration from "./Duration";
-import Copyright from "./Copyright";
+import Duration from "./duration";
+import Copyright from "./copyright";
 import SliderButtons from "./slider-buttons";
 
 export { Divider, MyIcon, Duration, Copyright, SliderButtons };

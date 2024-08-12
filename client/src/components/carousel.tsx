@@ -39,12 +39,12 @@ const Carousel = ({ data }: Data) => {
 
   return (
     <div className="flex overflow-hidden relative">
-      {data?.map((image, sliderIndex) => {
-        const opacity = index === sliderIndex ? "opacity-[1]" : "";
+      {data?.map((image, imageIndex) => {
+        const opacity = index === imageIndex ? "opacity-[1]" : "";
 
         return (
           <div
-            key={`${sliderIndex}-${image}`}
+            key={imageIndex.toString()}
             className={twMerge("w-full flex-shrink-0 bg-grey", opacity)}
             style={{
               transform: `translateX(-${index * 100}%)`,
@@ -56,8 +56,8 @@ const Carousel = ({ data }: Data) => {
                 alt="carousel image"
                 fill
                 quality={100}
-                loading={sliderIndex < 1 ? "eager" : "lazy"}
-                priority={sliderIndex < 1}
+                loading={imageIndex === 0 ? "eager" : "lazy"}
+                priority={imageIndex === 0}
                 sizes="100vw"
                 className="object-cover object-top"
               />
