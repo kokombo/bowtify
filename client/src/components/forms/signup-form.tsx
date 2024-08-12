@@ -5,7 +5,7 @@ import { signupValidationSchema } from "@/utilities/validation-schemas";
 import { FormButton } from "../buttons";
 import { SUBSCRIBE_TO_EMAIL } from "@/constants/data";
 import SignupFormPolicy from "../signup-form-policy";
-import Divider from "../divider";
+import Divider from "../dividerr";
 import SignupFormActionBox from "../signup-form-action-box";
 import CustomError from "../custom-error";
 
