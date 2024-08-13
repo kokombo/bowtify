@@ -1,4 +1,4 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse, type NextRequest, userAgent } from "next/server";
 import {
   publicRoutes,
   authRoutes,
@@ -21,6 +21,7 @@ export const middleware = async (req: NextRequest) => {
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
   const isBusinessRoute = nextUrl.pathname.startsWith("/ba");
   const isIndividualRoute = nextUrl.pathname.startsWith("/ia");
+  const { device, isBot, browser } = userAgent(req);
 
   if (isAuthenticated) {
     if (isAuthRoute) {
