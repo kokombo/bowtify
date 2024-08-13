@@ -1,9 +1,9 @@
 import UnauthenticatedHome from "@/components/unauthenticated-home";
 import IndividualAuthenticatedHome from "./ia/_components/IndividualAuthenticatedHome";
-import { getSession } from "next-auth/react";
+import { getServerSession } from "@/helpers/data";
 
 const Home = async () => {
-  const session = await getSession();
+  const { session } = await getServerSession();
 
   return session ? (
     <IndividualAuthenticatedHome session={session} />
