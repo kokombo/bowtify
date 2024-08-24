@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import {
   LoginFormSchema,
   RegisterFormSchema,
@@ -55,8 +55,8 @@ const register = async (req: Request, res: Response) => {
       });
     }
 
-    jwtSign({ id: newUser.id }, process.env.JWT_SECRET_TOKEN!, {
-      expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
+    jwtSign({ id: newUser.id }, process.env.JWT_SECRET_TOKEN as string, {
+      expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME as string,
     })
       .then((token) => {
         res.json({
@@ -108,8 +108,8 @@ const login = async (req: Request, res: Response) => {
         .json({ message: "Incorrect password. Please check and try again." });
     }
 
-    jwtSign({ id: user.id }, process.env.JWT_SECRET_TOKEN!, {
-      expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME!,
+    jwtSign({ id: user.id }, process.env.JWT_SECRET_TOKEN as string, {
+      expiresIn: process.env.JWT_TOKEN_EXPIRATION_TIME as string,
     })
       .then((token) => {
         res.json({
