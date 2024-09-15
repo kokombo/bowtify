@@ -1,5 +1,3 @@
-import { sliceString } from "@/utilities";
-
 type Props = {
   authors: string[];
 };
@@ -7,12 +5,10 @@ type Props = {
 const SuggestedCourseAuthors = (props: Props) => {
   return (
     <span>
-      <h6 className="hidden md:inline text-wrap text-xs capitalize">
-        {sliceString(props.authors.join(", "), 30)}
-      </h6>
-
-      <h6 className="inline md:hidden text-wrap text-xs capitalize">
-        {sliceString(props.authors.join(", "), 25)}
+      <h6 className="text-xs capitalize">
+        <span className="block text-ellipsis overflow-hidden sm:line-clamp-2 md:line-clamp-1">
+          {props.authors.join(", ")}
+        </span>
       </h6>
     </span>
   );

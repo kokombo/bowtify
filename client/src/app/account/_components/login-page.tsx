@@ -31,15 +31,14 @@ const LoginPage = () => {
       });
 
       if (res?.ok) {
-        await getSession()
-          .then((session) => {
-            const callbackUrl =
-              session?.user.accountType === "business" ? "/ba/dashboard" : "/";
-            router.push(callbackUrl);
-          })
-          .finally(() => {
-            onsubmitProps.resetForm();
-          });
+        const session = await getSession();
+
+        if (session) {
+          const callbackUrl =
+            session.user.accountType === "business" ? "/ba/dashboard" : "/";
+          router.push(callbackUrl);
+          onsubmitProps.resetForm();
+        }
       }
 
       if (res?.error) {

@@ -1,5 +1,3 @@
-import { sliceString } from "@/utilities";
-
 type Props = {
   title: string;
 };
@@ -7,12 +5,10 @@ type Props = {
 const SuggestedCourseTitle = (props: Props) => {
   return (
     <span>
-      <h4 className="hidden md:inline text-wrap text-base lg:text-lg leading-tight font-bold capitalize">
-        {sliceString(props.title, 40)}
-      </h4>
-
-      <h4 className="inline md:hidden text-wrap text-base lg:text-lg leading-tight font-bold capitalize">
-        {sliceString(props.title, 30)}
+      <h4 className="text-base lg:text-lg leading-tight font-bold capitalize">
+        <span className="block text-ellipsis overflow-hidden sm:line-clamp-2 md:line-clamp-1">
+          {props.title}
+        </span>
       </h4>
     </span>
   );
