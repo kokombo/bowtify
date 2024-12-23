@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { prisma } from "../utilities/prismaConnect";
+import prisma from "../utilities/prismaConnect";
 import StatusCodes from "http-status-codes";
 
 const getUserProfile = async (req: Request, res: Response) => {
@@ -26,8 +26,6 @@ const getUserProfile = async (req: Request, res: Response) => {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .json({ message: "Something went wrong, please try again." });
-  } finally {
-    await prisma.$disconnect();
   }
 };
 

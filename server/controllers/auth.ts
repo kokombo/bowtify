@@ -7,7 +7,7 @@ import StatusCodes from "http-status-codes";
 import * as bcrypt from "bcrypt";
 import { jwtSign } from "../utilities/jwt";
 import { ValidationError } from "yup";
-import { prisma } from "../utilities/prismaConnect";
+import prisma from "../utilities/prismaConnect";
 
 const register = async (req: Request, res: Response) => {
   const { firstName, lastName, email, accountType, subscribeToEmail } =
@@ -77,8 +77,6 @@ const register = async (req: Request, res: Response) => {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       message: "Something went wrong, please try again.",
     });
-  } finally {
-    await prisma.$disconnect();
   }
 };
 
@@ -132,8 +130,6 @@ const login = async (req: Request, res: Response) => {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       message: "Something went wrong, please try again.",
     });
-  } finally {
-    await prisma.$disconnect();
   }
 };
 

@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { prisma } from "../utilities/prismaConnect";
+import prisma from "../utilities/prismaConnect";
 
 export const authorizeUser = async (
   req: Request,
@@ -9,7 +9,7 @@ export const authorizeUser = async (
 ) => {
   const authHeader = req.headers.authorization;
 
-  if (authHeader && authHeader.startsWith("Bearer")) {
+  if (authHeader?.startsWith("Bearer")) {
     const token = authHeader.split(" ")[1];
 
     try {
